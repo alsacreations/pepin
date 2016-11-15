@@ -7,6 +7,7 @@ Pepin est un modèle (parmi tant d'autres) de plugin jQuery modulaire.
 * Comporte des paramètres par défaut.
 * Lit les paramètres additionnels ou remplace les valeurs par défaut depuis les attributs `data-*`  HTML de l'élément sur lequel il est appliqué, ou depuis un objet passé en argument à l'initialiation.
 * Peut comporter des méthodes privées/publiques.
+* Est protégé pour ne pas s'exécuter plusieurs fois (par erreur) sur le même élément.
 * Accès facile aux paramètres internes et autres méthodes.
 
 ## Usage
