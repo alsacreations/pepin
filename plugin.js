@@ -51,6 +51,14 @@
       */
     };
 
+    // Destroy the plugin (public method)
+    plugin.destroy = function() {
+      /*
+      Remove event handlers
+      Reset styles or classes ?
+      */
+    };
+
     // Initialization
     plugin.init();
 
