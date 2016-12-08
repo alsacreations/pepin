@@ -48,3 +48,28 @@ $(document).ready(function() {
 * <https://github.com/jquery-boilerplate>
 * <http://stefangabos.ro/jquery/jquery-plugin-boilerplate-revisited/>
 
+# Plugins
+
+Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
+
+* Accordion : Blocs déployables en accordéon
+* Anchor : Ancres provoquant un scroll vers la destination
+* Filter :
+  * Filter-data : Filtrage de données sur la page
+  * Filter-directory : Auto-complétion et recherche d'éléments sur la page
+* Modal : *@TODO* à venir
+* Offcanvas : Principe de déploiement off-canvas (ex : menu)
+* Selection : Eléments parents sélectionnables (ex : checkbox/radio)
+* Slider : Défilement de contenu de type carousel
+* Slideshow : Défilement de contenu de type diaporama
+* Sticky : Elément fixé en sticky au scroll
+* Tabs : Onglets
+* Toggle :
+  * Toggle-trigger : Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance
+  * Toggle-tablecells : Agir sur les cellules d'un tableau
+* Typosize : Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices
+
+## TODO
+
+* Documentation de ces plugins et de leurs paramètres/méthodes.
+* Exemples de code HTML par défaut.
