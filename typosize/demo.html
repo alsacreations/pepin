@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+		<meta charset="UTF-8">
+		<title>Démo Typosize</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .typosize-big {
+      font-size:2em;
+    }
+    .typosize-ultrabig {
+      font-size:3em;
+    }
+    </style>
+</head>
+<body>
+
+  <p>Button with default class that targets &lt;body&gt; :
+    <button class="js-typosize">aA</button>
+  </p>
+
+  <p>Button with custom CSS class and custom target
+    <button class="js-typosize" data-class-enabled="typosize-ultrabig" data-target="#container">aA+</button>
+  </p>
+
+  <div id="container">
+    <h1>Titre</h1>
+
+    <p>Paragraphe</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="typosize.js"></script>
+
+</body>
+</html>
