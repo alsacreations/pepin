@@ -57,7 +57,6 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 * Filter :
   * Filter-data : Filtrage de données sur la page
   * Filter-directory : Auto-complétion et recherche d'éléments sur la page
-* Modal : *@TODO* à venir
 * Offcanvas : Principe de déploiement off-canvas (ex : menu)
 * Selection : Eléments parents sélectionnables (ex : checkbox/radio)
 * Slider : Défilement de contenu de type carousel
@@ -71,5 +70,14 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 
 ## TODO
 
-* Documentation de ces plugins et de leurs paramètres/méthodes.
-* Exemples de code HTML par défaut.
+* Documentation avancée de ces plugins et de leurs paramètres/méthodes
+* Exemples de code HTML par défaut
+
+### Scripts à venir
+
+* Liens d'évitement
+* Liste/menu déroulant (à X niveaux)
+* Menu horizontal déroulant
+* Modale
+* Tooltip
+* Back to top
