@@ -2,6 +2,8 @@
 
 Pepin est un modèle (parmi tant d'autres) de plugin jQuery modulaire.
 
+Il est accompagné d'exemples d'implémentations pratiques.
+
 ## Intérêt
 
 * Comporte des paramètres par défaut.
@@ -42,6 +44,29 @@ $(document).ready(function() {
 
 });
 ```
+
+### Faire communiquer deux plugins indépendants
+
+* Placer un écouteur d'événement personnalisé dans le premier plugin dans la section `registerEvents`.
+* Le déclencher par le deuxième lorsque c'est nécessaire avec un appel de `trigger()`.
+
+Premier, sur l'élément de classe `.first` :
+```javascript
+var registerEvents = function() {
+  // ... Other basic events
+  $element.off('myCustomEvent').on('myCustomEvent', function() {
+    // Do something when called from other script
+  });
+}
+```
+
+Second sur l'élément `.second` :
+```javascript
+// ... Code stuff
+$('.first').trigger('myCustomEvent');
+// ... Code stuff
+```
+
 
 ## Inspirations
 
