@@ -13,13 +13,23 @@ Il peut y en avoir plusieurs par page.
 * `classEnabled` : classe à ajouter/supprimer à l'élément ciblé par _target_ lorsque l'élément du plugin est cliqué (défaut : `typosize-big`)
 * `target` : sélecteur de l'élément à modifier (défaut : `body`)
 
-### Exemple d'usage de base
+### Exemples
+
+## Usage de base
 
 1. Placer la classe `.js-typosize` sur un bouton (de préférence) ou un lien
 2. Définir les styles de `.typosize-big` dans la feuille de styles CSS
 
 ```html
 <button class="js-typosize" title="Agrandir/réduire la taille de police">aA</button>
+```
+
+## Usage avec paramètres
+
+Par attributs data-* on peut moduler les paramètres par défaut.
+
+```html
+<button class="js-typosize" title="Agrandir/réduire la taille de police" data-class-enabled="bigbigbig" data-target=".container">aA</button>
 ```
 
 Voir la démonstration dans index.html
