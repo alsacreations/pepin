@@ -22,4 +22,4 @@ Lorsque l'élément contient une case à cocher (checkbox), il se voit ajouté u
 </p>
 ```
 
-Voir la démonstration dans demo.html
+Voir la démonstration dans index.html
