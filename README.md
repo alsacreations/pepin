@@ -108,4 +108,5 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 * Back to top
 * Navigation responsive
 * Bandeau cookie
-* Autocomplete ?
+* Autocomplete
+* Smooth scroll
