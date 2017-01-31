@@ -86,6 +86,7 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 * Selection : Eléments parents sélectionnables (ex : checkbox/radio)
 * Slider : Défilement de contenu de type carousel
 * Slideshow : Défilement de contenu de type diaporama
+* SmoothScroll : Défilement de page (vertical en général) suite au clic sur un lien/bouton
 * Sticky : Elément fixé en sticky au scroll
 * Tabs : Onglets
 * Toggle :
