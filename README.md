@@ -106,6 +106,5 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 * Modale
 * Tooltip
 * Back to top
-* Smooth scroll
 * Navigation responsive
 * Autocomplete

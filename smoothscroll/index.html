@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+		<meta charset="UTF-8">
+		<title>Démo SmoothScroll</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <p style="height:600px;border-left:5px dotted #2980B9"></p>
+
+  <div id="target1">
+    <h1>Cible 1</h1>
+    <p>Lorem Ipsum <a href="#target3" class="js-smoothscroll">Lien vers l'ancre #target3 (sans attribut data-target)</a></p>
+  </div>
+
+  <p style="height:600px;border-left:5px dotted #2980B9"></p>
+
+  <div id="target2">
+    <h1>Cible 2</h1>
+    <p>Lorem Ipsum <button class="js-smoothscroll" data-target="#target3">Bouton vers #target3</button></p>
+  </div>
+
+  <p style="height:600px;border-left:5px dotted #2980B9"></p>
+
+  <div id="target3">
+    <h1>Cible 3</h1>
+    <p>Lorem Ipsum <a href="#" data-target="#target1" class="js-smoothscroll">Lien vers #target1 (avec attribut data-target)</a></p>
+  </div>
+
+  <p style="height:600px;border-left:5px dotted #2980B9"></p>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="smoothscroll.js"></script>
+
+</body>
+</html>
