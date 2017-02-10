@@ -34,7 +34,7 @@
 
       // Event Handlers on HTML components inside the plugin
       var registerEvents = function() {
-        $element.on('click.smoothscroll').on('click.smoothscroll', function(e) {
+        $element.off('click.smoothscroll').on('click.smoothscroll', function(e) {
           e.preventDefault();
           var $target;
           if(plugin.settings.target) $target = $(plugin.settings.target);
