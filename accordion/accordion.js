@@ -13,9 +13,10 @@
       selectorPanel: '.js-accordion-panel',
       selectorIcon: '.icon-arrow',
       classIconActive: 'to-bottom',
+      classHidden: 'visually-hidden',
       autoScroll: true,
       scrollSpeed: 300,
-      mobileMaxWidth: 768 // px, should match $small-plus-screen (scss)
+      mobileMaxWidth: 768 // px
     };
 
     var plugin = this;
@@ -109,14 +110,14 @@
           .attr({'aria-expanded':'true','aria-selected':'true'})
           .find(plugin.settings.selectorIcon).addClass(plugin.settings.classIconActive);
         $panel
-          .attr({'aria-hidden':'false'});
+          .attr({'aria-hidden':'false'}).removeClass(plugin.settings.classHidden);
       } else { // Hidden
         $header
           .removeAttr('aria-expanded')
           .removeAttr('aria-selected')
           .find(plugin.settings.selectorIcon).removeClass(plugin.settings.classIconActive);
         $panel
-          .attr({'aria-hidden':'true'});
+          .attr({'aria-hidden':'true'}).addClass(plugin.settings.classHidden);
       }
       if(state && plugin.settings.autoScroll && scrollToElement) {
         setTimeout(function() {
