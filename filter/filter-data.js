@@ -27,6 +27,7 @@
       plugin.settings = $.extend({}, defaults, options);
       updateSettingsFromHTMLData();
       registerEvents();
+      plugin.doFilter(); // Force filter data if value is changed before event registration
     };
 
     // Reads plugin settings from HTML data-* attributes (camelCase)
