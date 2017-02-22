@@ -1,8 +1,8 @@
 # Pepin
 
-Pepin est un modèle (parmi tant d'autres) de plugin jQuery modulaire.
+Pepin est un modèle (parmi tant d'autres) de plugin jQuery modulaire. Il est accompagné d'exemples d'implémentations pratiques.
 
-Il est accompagné d'exemples d'implémentations pratiques.
+Voir aussi les [Snippets](https://github.com/alsacreations/snippets) et [Guidelines](https://github.com/alsacreations/guidelines)
 
 ## Intérêt
 
