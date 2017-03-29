@@ -1,6 +1,6 @@
 /**!
  Plugin toggle trigger
- Triggers hide/show elements with another element
+ Triggers hide/show on target elements (or do whatever with classes) from a source element
  */
 
 (function($) {
@@ -11,9 +11,12 @@
     var defaults = {
       active:false,
       target:undefined,
+      targetInvert:undefined,
       classToggle:'js-hidden',
       selectorContainer:undefined, // could be '.js-toggle-container'
-      selectorTarget:'.js-toggle-target'
+      selectorTarget:'.js-toggle-target',
+      selectorTargetInvert:'.js-disable-target',
+      useChecked:false // if true, $element needs to be checked (input radio/checkbox) to activate the target
     };
 
     var plugin = this;
@@ -28,14 +31,18 @@
       plugin.settings = $.extend({}, defaults, options);
       updateSettingsFromHTMLData();
       registerEvents();
-      plugin.settings.active = $element.hasClass('is-active');
+      if(plugin.settings.useChecked) plugin.settings.active = $element.is(':checked');
+      else plugin.settings.active = $element.hasClass('is-active');
       if(!plugin.settings.target) {
         if(plugin.settings.selectorContainer) {
           // When using a container
-          plugin.settings.target = $element.closest(plugin.settings.selectorContainer).find(plugin.settings.selectorTarget);
+          var $c = $element.closest(plugin.settings.selectorContainer);
+          plugin.settings.target = $c.find(plugin.settings.selectorTarget);
+          if(plugin.settings.selectorTargetInvert) plugin.settings.targetInvert = $c.find(plugin.settings.selectorTargetInvert);
         } else {
           // Not within a container, search the whole DOM
           plugin.settings.target = $(plugin.settings.selectorTarget);
+          if(plugin.settings.selectorTargetInvert) plugin.settings.targetInvert = $(plugin.settings.selectorTargetInvert);
         }
       }
       if(plugin.settings.target) {
@@ -56,10 +63,14 @@
 
     // Toggle the state on the target element (public method)
     plugin.toggleTarget = function() {
-      plugin.settings.active = !$element.hasClass('is-active');
+      if(plugin.settings.useChecked) plugin.settings.active = $element.is(':checked');
+      else plugin.settings.active = !$element.hasClass('is-active');
       $element.toggleClass('is-active',plugin.settings.active);
       if(plugin.settings.target) {
         $(plugin.settings.target).toggleClass(plugin.settings.classToggle,!plugin.settings.active);
+      }
+      if(plugin.settings.targetInvert) {
+        $(plugin.settings.targetInvert).toggleClass(plugin.settings.classToggle,plugin.settings.active);
       }
       $('.icon-plus, .icon-minus',$element).toggleClass('icon-plus icon-minus');
       var textLabel = $('span.visually-hidden',$element);
