@@ -12,7 +12,7 @@
       active:false,
       target:undefined,
       classToggle:'js-hidden',
-      selectorContainer:'.js-toggle-container',
+      selectorContainer:undefined, // could be '.js-toggle-container'
       selectorTarget:'.js-toggle-target'
     };
 
@@ -30,7 +30,13 @@
       registerEvents();
       plugin.settings.active = $element.hasClass('is-active');
       if(!plugin.settings.target) {
-        plugin.settings.target = $element.closest(plugin.settings.selectorContainer).find(plugin.settings.selectorTarget);
+        if(plugin.settings.selectorContainer) {
+          // When using a container
+          plugin.settings.target = $element.closest(plugin.settings.selectorContainer).find(plugin.settings.selectorTarget);
+        } else {
+          // Not within a container, search the whole DOM
+          plugin.settings.target = $(plugin.settings.selectorTarget);
+        }
       }
       if(plugin.settings.target) {
         $(plugin.settings.target).addClass(plugin.settings.classToggle);
