@@ -29,8 +29,8 @@
       // The part of the website content you want to switch to the right side (off canvas). Ex: data-selector-off-canvas=".js-content-off-canvas"
       selectorOffCanvas: '.js-content-off-canvas',
 
-      // px, should match ($medium-screen) (scss)
-      mobileMaxWidth: 980
+      // px, should match ($medium - 1px), for example, in KNACSS/sass/_config/_breakpoints.scss (scss)
+      mobileMaxWidth: 990
     };
 
     var plugin = this;
@@ -102,9 +102,9 @@
     /*
     var resizeTimer;
     $(window).on('resize.offcanvas', function(e) {
-      if (window.matchMedia("(max-width: 980px").matches) {
+      if (window.matchMedia("(max-width: "+plugin.settings.mobileMaxWidth+"px)").matches) {
 
-        // Hide .js-accessible-navigation on <980px and during window resize
+        // Hide .js-accessible-navigation on mobile and during window resize
         $('.js-accessible-navigation').hide();
 
         clearTimeout(resizeTimer);
