@@ -102,7 +102,7 @@
     /*
     var resizeTimer;
     $(window).on('resize.offcanvas', function(e) {
-      if (window.matchMedia("(max-width: "+plugin.settings.mobileMaxWidth+"px").matches) {
+      if (window.matchMedia("(max-width: "+plugin.settings.mobileMaxWidth+"px)").matches) {
 
         // Hide .js-accessible-navigation on mobile and during window resize
         $('.js-accessible-navigation').hide();
