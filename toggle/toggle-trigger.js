@@ -46,7 +46,7 @@
         }
       }
       if(plugin.settings.target) {
-        $(plugin.settings.target).addClass(plugin.settings.classToggle);
+        plugin.settings.target.addClass(plugin.settings.classToggle);
       }
     };
 
@@ -67,10 +67,10 @@
       else plugin.settings.active = !$element.hasClass('is-active');
       $element.toggleClass('is-active',plugin.settings.active);
       if(plugin.settings.target) {
-        $(plugin.settings.target).toggleClass(plugin.settings.classToggle,!plugin.settings.active);
+        plugin.settings.target.toggleClass(plugin.settings.classToggle,!plugin.settings.active);
       }
       if(plugin.settings.targetInvert) {
-        $(plugin.settings.targetInvert).toggleClass(plugin.settings.classToggle,plugin.settings.active);
+        plugin.settings.targetInvert.toggleClass(plugin.settings.classToggle,plugin.settings.active);
       }
       $('.icon-plus, .icon-minus',$element).toggleClass('icon-plus icon-minus');
       var textLabel = $('span.visually-hidden',$element);
