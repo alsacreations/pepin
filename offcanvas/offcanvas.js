@@ -1,5 +1,5 @@
 /**!
- Menu Off Canvas (for mobile < 979px)
+ Menu Off Canvas (for mobile < mobileMaxWidth px)
 
  To open the main navigation (off canvas) from the left side and switch the main website content to the right side (off canvas).
  */
@@ -74,6 +74,15 @@
         $(plugin.settings.selectorBurgerButton).removeClass(plugin.settings.classButtonActive);
         $(plugin.settings.target).removeClass(plugin.settings.classMenuActive);
         $(plugin.settings.selectorOffCanvas).removeClass(plugin.settings.classOffCanvasActive);
+      } else {
+        // Visual hack to avoid CSS3 animation on window resize
+        // Hide .js-accessible-navigation on mobile and during window resize
+        $('.js-accessible-navigation').hide();
+        clearTimeout(plugin.resizeTimer);
+        plugin.resizeTimer = setTimeout(function() {
+          // Show .js-accessible-navigation when resize is done
+          $('.js-accessible-navigation').show();
+        }, 50);
       }
     };
 
@@ -97,26 +106,6 @@
 
     // Launch plugin on target element
     $('.js-offcanvas').offCanvas();
-
-    // Visual hack to avoid CSS3 animation on window resize
-    /*
-    var resizeTimer;
-    $(window).on('resize.offcanvas', function(e) {
-      if (window.matchMedia("(max-width: "+plugin.settings.mobileMaxWidth+"px)").matches) {
-
-        // Hide .js-accessible-navigation on mobile and during window resize
-        $('.js-accessible-navigation').hide();
-
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-
-          // Show .js-accessible-navigation when resize is done
-          $('.js-accessible-navigation').show();
-
-        }, 50);
-      }
-    });
-    */
 
   });
 
