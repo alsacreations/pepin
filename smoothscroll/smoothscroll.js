@@ -24,6 +24,7 @@
          plugin.settings = $.extend({}, defaults, options);
          updateSettingsFromHTMLData();
          registerEvents();
+         if(window.matchMedia('(prefers-reduced-motion)').matches) plugin.settings.speed = 0; // a11y
       };
 
       // Reads plugin settings from HTML data-* attributes (camelCase)
@@ -46,7 +47,9 @@
       // Plugin do something
       plugin.scrollTo = function($target) {
          if($target.length<1) return;
+         $target.attr('tabindex','-1'); // a11y
          $('body,html').animate({scrollTop:$target.offset().top},plugin.settings.speed);
+         $target.focus().removeAttr('tabindex'); // a11y
       };
 
       plugin.init();
