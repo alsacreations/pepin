@@ -7,8 +7,8 @@ Voir aussi les [Snippets](https://github.com/alsacreations/snippets) et [Guideli
 ## Intérêt
 
 * Comporte des paramètres par défaut.
-* Lit les paramètres additionnels ou remplace les valeurs par défaut depuis les attributs `data-*`  HTML de l'élément sur lequel il est appliqué, ou depuis un objet passé en argument à l'initialiation.
-* Peut comporter des méthodes privées/publiques.
+* Lit les paramètres additionnels ou remplace les paramètres par défaut depuis les attributs `data-*`  HTML de l'élément sur lequel il est appliqué, ou depuis un objet JavaScript passé en argument à l'initialiation.
+* Peut comporter des méthodes privées (internes au plugin) / publiques (exécutables depuis d'autres scripts).
 * Est protégé pour ne pas s'exécuter plusieurs fois (par erreur) sur le même élément.
 * Accès facile aux paramètres internes et autres méthodes.
 
@@ -91,7 +91,7 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 * Sticky : Elément fixé en sticky au scroll
 * Tabs : Onglets
 * Toggle :
-  * Toggle-trigger : Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance
+  * Toggle-trigger : Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance (ex : afficher/masquer un élément, listes déroulantes, etc)
   * Toggle-tablecells : Agir sur les cellules d'un tableau
 * Typosize : Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices
 
@@ -103,8 +103,7 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 ### Scripts à venir
 
 * Liens d'évitement
-* Liste/menu déroulant (à X niveaux)
-* Menu horizontal déroulant
+* Menu déroulant
 * Modale
 * Tooltip
 * Navigation responsive

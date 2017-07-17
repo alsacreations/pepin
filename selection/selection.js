@@ -27,7 +27,7 @@
       // prevent when checkbox already checked at load
       $(plugin.settings.toggler, $element).each(function(e){
         if( $(this).is(':checked') ) {
-          $element.addClass(plugin.settings.classSelected);
+          $element.addClass(plugin.settings.classSelected).attr('aria-selected','true');
         }
       });
     };
@@ -42,6 +42,7 @@
     var registerEvents = function() {
       $(plugin.settings.toggler, $element).off('click.selection').on('click.selection', function(e) {
         $element.toggleClass(plugin.settings.classSelected, $(this).is(':checked'));
+        $element.attr('aria-selected', $(this).is(':checked').toString());
       });
     };
 

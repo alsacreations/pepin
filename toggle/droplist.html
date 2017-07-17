@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+		<meta charset="UTF-8">
+		<title>Démo listes déployables avec Toggle-Trigger</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .js-hidden {
+      display: none;
+    }
+    button {
+      font-size: 2rem;
+      display: block;
+    }
+    </style>
+</head>
+<body>
+
+  <div>
+    <p>Version simple (éléments indépendants)</p>
+    <button class="js-toggle-trigger" data-selector-target=".list1">Liste 1</button>
+    <ul class="list1">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button class="js-toggle-trigger" data-selector-target=".list2">Liste 2</button>
+    <ul class="list2">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button class="js-toggle-trigger" data-selector-target=".list3">Liste 3</button>
+    <ul class="list3">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div>
+    <p>Version avec un seul élément ouvert à la fois (éléments liés)</p>
+    <button class="js-toggle-trigger group" data-selector-target=".list4" data-selector-target-invert=".group">Liste 4</button>
+    <ul class="list4">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button class="js-toggle-trigger group" data-selector-target=".list5" data-selector-target-invert=".group">Liste 5</button>
+    <ul class="list5">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button class="js-toggle-trigger group" data-selector-target=".list6" data-selector-target-invert=".group">Liste 6</button>
+    <ul class="list6">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="toggle-trigger.js"></script>
+
+</body>
+</html>

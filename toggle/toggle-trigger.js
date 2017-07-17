@@ -13,6 +13,7 @@
       target:undefined,
       targetInvert:undefined,
       classToggle:'js-hidden',
+      classActive:'is-active',
       selectorContainer:undefined, // could be '.js-toggle-container'
       selectorTarget:'.js-toggle-target',
       selectorTargetInvert:'.js-disable-target',
@@ -32,7 +33,7 @@
       updateSettingsFromHTMLData();
       registerEvents();
       if(plugin.settings.useChecked) plugin.settings.active = $element.is(':checked');
-      else plugin.settings.active = $element.hasClass('is-active');
+      else plugin.settings.active = $element.hasClass(plugin.settings.classActive);
       if(!plugin.settings.target) {
         if(plugin.settings.selectorContainer) {
           // When using a container
@@ -59,23 +60,32 @@
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
       $element.on('click.toggletrigger', plugin.toggleTarget);
+      $element.on('toggle-trigger-off', plugin.toggleOff);
     };
 
     // Toggle the state on the target element (public method)
     plugin.toggleTarget = function() {
       if(plugin.settings.useChecked) plugin.settings.active = $element.is(':checked');
-      else plugin.settings.active = !$element.hasClass('is-active');
-      $element.toggleClass('is-active',plugin.settings.active);
+      else plugin.settings.active = !plugin.settings.target.hasClass(plugin.settings.classToggle);
+      // @TODO ne pas se baser sur is-active pour savoir s'il est actif mais si la classe
+      // est présente sur la target
+      $element.toggleClass(plugin.settings.classActive,plugin.settings.active);
       if(plugin.settings.target) {
         plugin.settings.target.toggleClass(plugin.settings.classToggle,!plugin.settings.active);
       }
-      if(plugin.settings.targetInvert) {
-        plugin.settings.targetInvert.toggleClass(plugin.settings.classToggle,plugin.settings.active);
+      if(plugin.settings.targetInvert && plugin.settings.active) {
+        plugin.settings.targetInvert.not($element).trigger('toggle-trigger-off');
       }
-      $('.icon-plus, .icon-minus',$element).toggleClass('icon-plus icon-minus');
+      // If needed : toggle internal icon state
+      // $('.icon-plus, .icon-minus',$element).toggleClass('icon-plus icon-minus');
       var textLabel = $('span.visually-hidden',$element);
       if(plugin.settings.active) textLabel.text(textLabel.data('togglemsg-on'));
       else textLabel.text(textLabel.data('togglemsg-off'));
+    };
+
+    // Toggle the state off the inverted target (public method)
+    plugin.toggleOff = function() {
+      plugin.settings.target.addClass(plugin.settings.classToggle);
     };
 
     // Initialization
