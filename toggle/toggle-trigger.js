@@ -16,7 +16,8 @@
       classActive:'is-active',
       selectorContainer:undefined, // could be '.js-toggle-container'
       selectorTarget:'.js-toggle-target',
-      selectorTargetInvert:'.js-disable-target',
+      selectorTargetInvert:undefined,
+      selectorToggleInvert:undefined,
       useChecked:false // if true, $element needs to be checked (input radio/checkbox) to activate the target
     };
 
@@ -44,6 +45,7 @@
           // Not within a container, search the whole DOM
           plugin.settings.target = $(plugin.settings.selectorTarget);
           if(plugin.settings.selectorTargetInvert) plugin.settings.targetInvert = $(plugin.settings.selectorTargetInvert);
+          if(plugin.settings.selectorToggleInvert) plugin.settings.toggleInvert = $(plugin.settings.selectorToggleInvert);
         }
       }
       if(plugin.settings.target) {
@@ -66,15 +68,18 @@
     // Toggle the state on the target element (public method)
     plugin.toggleTarget = function() {
       if(plugin.settings.useChecked) plugin.settings.active = $element.is(':checked');
-      else plugin.settings.active = !plugin.settings.target.hasClass(plugin.settings.classToggle);
-      // @TODO ne pas se baser sur is-active pour savoir s'il est actif mais si la classe
-      // est présente sur la target
+      else plugin.settings.active = plugin.settings.target.hasClass(plugin.settings.classToggle);
+      // Toggle the active class on the element itself
       $element.toggleClass(plugin.settings.classActive,plugin.settings.active);
+      // Toggle the defined class on the target
       if(plugin.settings.target) {
         plugin.settings.target.toggleClass(plugin.settings.classToggle,!plugin.settings.active);
       }
-      if(plugin.settings.targetInvert && plugin.settings.active) {
-        plugin.settings.targetInvert.not($element).trigger('toggle-trigger-off');
+      if(plugin.settings.targetInvert) {
+        plugin.settings.targetInvert.toggleClass(plugin.settings.classToggle,plugin.settings.active);
+      }
+      if(plugin.settings.toggleInvert && plugin.settings.active) {
+        plugin.settings.toggleInvert.not($element).trigger('toggle-trigger-off');
       }
       // If needed : toggle internal icon state
       // $('.icon-plus, .icon-minus',$element).toggleClass('icon-plus icon-minus');

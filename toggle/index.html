@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+		<meta charset="UTF-8">
+		<title>Démo listes déployables avec Toggle-Trigger</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .js-hidden {
+      display: none;
+    }
+    button {
+      font-size: 2rem;
+      display: block;
+    }
+    .beautiful {
+      background: tomato;
+      color: white;
+    }
+    </style>
+</head>
+<body>
+
+  <div>
+    <p>Afficher ou masquer un élément (utilise .js-hidden par défaut)</p>
+    <button class="js-toggle-trigger" data-selector-target=".hop1">Afficher/masquer</button>
+    <ul class="hop1">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div>
+    <p>Changer la classe d'un autre élément</p>
+    <button class="js-toggle-trigger" data-selector-target=".hop2" data-class-toggle="beautiful">Toggle !</button>
+    <p class="hop2">Cible</p>
+  </div>
+
+  <hr>
+
+  <div>
+    <p>Changer la classe d'un autre élément (+ cible inversée)</p>
+    <button class="js-toggle-trigger" data-selector-target=".hop3" data-selector-target-invert=".hop4" data-class-toggle="beautiful">Toggle !</button>
+    <p class="hop3">Cible</p>
+    <p class="hop4">Cible inversée</p>
+  </div>
+
+  <hr>
+
+  <div>
+    <p>Changer la classe d'un autre élément en se basant sur checked</p>
+    <input type="checkbox" class="js-toggle-trigger" data-selector-target-invert=".hop5" data-class-toggle="beautiful" data-use-checked="true" id="c1"> <label for="c1">Cochez-moi</label>
+    <p class="hop5">Cible</p>
+  </div>
+
+  <hr>
+
+  <div>
+    <p>Dans un même conteneur</p>
+    <div class="js-toggle-container">
+      <button class="js-toggle-trigger" data-selector-container=".js-toggle-container" data-selector-target=".hop6" data-class-toggle="beautiful">Toggle !</button>
+      <p class="hop6">Cible concernée car dans le même conteneur</p>
+    </div>
+    <p class="hop6">Cible non modifiée</p>
+  </div>
+
+  <hr>
+
+  <div>
+    <p>Liste déroulante simple (éléments indépendants)</p>
+    <button class="js-toggle-trigger" data-selector-target=".list1">Liste 1</button>
+    <ul class="list1">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button class="js-toggle-trigger" data-selector-target=".list2">Liste 2</button>
+    <ul class="list2">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button class="js-toggle-trigger" data-selector-target=".list3">Liste 3</button>
+    <ul class="list3">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div>
+    <p>Liste déroulante avec un seul élément ouvert à la fois (éléments liés)</p>
+    <button class="js-toggle-trigger group" data-selector-target=".list4" data-selector-toggle-invert=".group">Liste 4</button>
+    <ul class="list4">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button class="js-toggle-trigger group" data-selector-target=".list5" data-selector-toggle-invert=".group">Liste 5</button>
+    <ul class="list5">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button class="js-toggle-trigger group" data-selector-target=".list6" data-selector-toggle-invert=".group">Liste 6</button>
+    <ul class="list6">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="toggle-trigger.js"></script>
+
+</body>
+</html>
