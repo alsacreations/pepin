@@ -79,7 +79,7 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 
 * Accordion : Blocs déployables en accordéon
 * Anchor : Ancres provoquant un scroll vers la destination
-* Back to top : Permet de créer un évènement au clic pour retourner en haut de page
+* Back-to-top : Permet de créer un évènement au clic pour retourner en haut de page
 * Filter :
   * Filter-data : Filtrage de données sur la page
   * Filter-directory : Auto-complétion et recherche d'éléments sur la page

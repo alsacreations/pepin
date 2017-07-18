@@ -1,5 +1,10 @@
+/**!
+ BackToTop
+ Retour en haut de page
+ */
+
 (function($) {
-  
+
   $.backToTop = function( element, options ) {
 
     /*
@@ -10,7 +15,7 @@
       speed  : 500
     };
 
-    // Store 
+    // Store
     backToTop = this;
 
     // Initialize parameters array ( used to merge options & custom options )
@@ -46,18 +51,18 @@
 /*-------------------------------------------------------------*\
                         Plugin methods
 \*-------------------------------------------------------------*/
-    
+
     var registerEvents = function() {
 
       // Do scroll on element click
-      $(element).on( 'click', backToTop.doScroll );
+      $(element).on('click.backtotop', backToTop.doScroll );
 
-    }
+    };
 
     backToTop.doScroll = function(e) {
       e.preventDefault();
       $('html,body').animate({ scrollTop: 0 }, backToTop.settings.speed);
-    }
+    };
 
     // Init plugin
     init();
@@ -78,9 +83,9 @@
         $(this).data( 'js-back-top', backToTop );
       }
 
-    }); 
+    });
 
-  }
+  };
 
   $( '.js-back-top' ).backToTop();
 
