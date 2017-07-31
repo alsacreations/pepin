@@ -48,7 +48,7 @@
           if(plugin.settings.selectorToggleInvert) plugin.settings.toggleInvert = $(plugin.settings.selectorToggleInvert);
         }
       }
-      if(plugin.settings.target) {
+      if(plugin.settings.target && !plugin.settings.active) {
         plugin.settings.target.addClass(plugin.settings.classToggle);
       }
     };
