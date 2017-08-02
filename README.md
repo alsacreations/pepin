@@ -78,7 +78,7 @@ $('.first').trigger('myCustomEvent');
 Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 
 | Nom  | Description | Statut | Doc |
-| ------------- | ------------- |
+| ------------- | ------------- | ------------- | ------------- |
 | Accordion | Blocs déployables en accordéon  | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
 | Anchor | Ancres provoquant un scroll vers la destination | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
 | Back-to-top | Retour en haut de page | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
