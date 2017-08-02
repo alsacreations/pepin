@@ -77,34 +77,24 @@ $('.first').trigger('myCustomEvent');
 
 Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 
-* Accordion : Blocs déployables en accordéon
-* Anchor : Ancres provoquant un scroll vers la destination
-* Back-to-top : Permet de créer un évènement au clic pour retourner en haut de page
-* Filter :
-  * Filter-data : Filtrage de données sur la page
-  * Filter-directory : Auto-complétion et recherche d'éléments sur la page
-* Offcanvas : Principe de déploiement off-canvas (ex : menu)
-* Selection : Eléments parents sélectionnables (ex : checkbox/radio)
-* Slider : Défilement de contenu de type carousel
-* Slideshow : Défilement de contenu de type diaporama
-* SmoothScroll : Défilement de page (vertical en général) suite au clic sur un lien/bouton
-* Sticky : Elément fixé en sticky au scroll
-* Tabs : Onglets
-* Toggle :
-  * Toggle-trigger : Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance (ex : afficher/masquer un élément, listes déroulantes, etc)
-  * Toggle-tablecells : Agir sur les cellules d'un tableau
-* Typosize : Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices
-
-## TODO
-
-* Documentation avancée de ces plugins et de leurs paramètres/méthodes
-* Exemples de code HTML par défaut
-
-### Scripts à venir
-
-* Liens d'évitement
-* Menu déroulant
-* Modale
-* Tooltip
-* Navigation responsive
-* Autocomplete
+| Nom  | Description | Statut | Doc |
+| ------------- | ------------- |
+| Accordion | Blocs déployables en accordéon  | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
+| Anchor | Ancres provoquant un scroll vers la destination | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
+| Back-to-top | Retour en haut de page | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
+| Filter | Filtrage de données sur la page / Auto-complétion et recherche d'éléments sur la page | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
+| Offcanvas | Principe de déploiement off-canvas (ex : menu) | En cours | <span style="color:orange">TODO</span> |
+| Selection | Eléments parents sélectionnables (ex : checkbox/radio) | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
+| Slider | Défilement de contenu de type carousel | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
+| Slideshow | Défilement de contenu de type diaporama | <span style="color:green">OK</span> | En cours |
+| SmoothScroll | Défilement de page (vertical en général) suite au clic sur un lien/bouton | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
+| Sticky | Elément fixé en sticky au scroll | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
+| Tabs | Onglets | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
+| Toggle | Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance (ex : afficher/masquer un élément, listes déroulantes, agir sur les cellules d'un tableau, etc) | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
+| Typosize | Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
+| - | Liens d'évitement | Prévu | - |
+| - | Menu déroulant | Prévu | - |
+| - | Modale | Prévu | - |
+| - | Tooltip | Prévu | - |
+| - | Navigation responsive | Prévu | - |
+| - | Autocomplete | Prévu | - |
