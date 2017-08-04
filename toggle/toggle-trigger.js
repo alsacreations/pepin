@@ -91,6 +91,7 @@
     // Toggle the state off the inverted target (public method)
     plugin.toggleOff = function() {
       plugin.settings.target.addClass(plugin.settings.classToggle);
+      $element.removeClass(plugin.settings.classActive);
     };
 
     // Initialization
