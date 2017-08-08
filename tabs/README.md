@@ -81,7 +81,7 @@ Certains paramètres sont optionnels selon votre structure. Par exemple si les o
 }
 ```
 
-Voir la démonstration dans demos/index-list.html
+Voir la démonstration dans index-list.html
 
 ### Exemple de structure HTML (`<nav>`)
 
@@ -150,4 +150,4 @@ Voir la démonstration dans demos/index-list.html
 }
 ```
 
-Voir la démonstration dans demos/index-nav.html
+Voir la démonstration dans index-nav.html
