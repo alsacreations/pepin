@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Démo Tabs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <style>
+  .tabs-menu {
+    border-bottom: 2px solid #ddd;
+  }
+
+  .tabs-menu-link {
+    display: block;
+    margin-bottom: -2px;
+    padding: 1em 2em;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    transition: .25s;
+    transition-property: color, border, background-color;
+  }
+
+  .tabs-menu-link.is-active {
+    border-bottom-color: #ddd;;
+    outline: 0;
+  }
+  .tabs-menu-link:focus {
+    border-bottom-color: olivedrab;
+    color: olivedrab;
+    outline: 0;
+  }
+
+  @media (min-width: 576px) {
+    .tabs-menu-link {
+      display: inline-block;
+    }
+  }
+
+  .tabs-content-item {
+    padding-top: 10px;
+  }
+
+  .tabs-content-item[aria-hidden="true"] {
+    visibility: hidden;
+    overflow: hidden;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .tabs-content-item[aria-hidden="false"] {
+    visibility: visible;
+  }
+
+
+  /* Deco */
+
+  html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+
+  * {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: 2rem;
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: #555
+  }
+  a {
+    color: inherit;
+  }
+</style>
+</head>
+
+<body>
+
+    <h1>Onglets responsive et accessibles</h1>
+    <p>Navigables à la souris et au clavier (tabulation pour prendre le focus, puis flèches directionnelles)</p>
+
+    <div class="tabs js-tabs">
+      <nav class="tabs-menu">
+        <a href="#tab1" class="tabs-menu-link is-active">Salade</a>
+        <a href="#tab2" class="tabs-menu-link">Tomate</a>
+        <a href="#tab3" class="tabs-menu-link">Oignons</a>
+      </nav>
+
+      <div class="tabs-content">
+        <div id="tab1" class="tabs-content-item">Contenu 1. <br>Lorem Elsass Ipsum mitt picon bière munster du ftomi! Ponchour bisame. Bibbeleskaas jetz rossbolla sech choucroute un schwanz geburtstàg, Chinette dû, ìch bier deppfele schiesser.</div>
+        <div id="tab2" class="tabs-content-item">Contenu 2. <br>Flammekueche de knèkes Seppele gal! a hopla geburtstàg, alles fraü Chulia Roberts oder knäckes dûû blottkopf. Noch bredele schissabibala, yeuh e schmutz.</div>
+        <div id="tab3" class="tabs-content-item">Contenu 3. <br>E gewurtztraminer doch Carola schneck, schmutz a riesling de chambon eme rucksack Roger dû hopla geiss, jetz Chorchette de Scharrarbergheim.</div>
+      </div>
+    </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="tabs.js"></script>
+
+</body>
+
+</html>

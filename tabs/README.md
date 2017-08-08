@@ -14,12 +14,16 @@ Onglets pour panneaux de contenu.
 * `selectorContent`: sélecteur de contenu (défaut : `.tabs-content-item`)
 * `classActive`: classe ajoutée à l'élement actif (défaut : `is-active`)
 
+Certains paramètres sont optionnels selon votre structure. Par exemple si les onglets ne sont pas basés sur une liste `<ul> / <li>`, `selectorList` et `selectorListItems` ne seront pas affectés.
+
 ### Exemples
 
 ## Usage de base
 
 1. Placer la classe `.js-tabs` sur le conteneur général
 2. Utiliser et personnaliser les styles CSS prévus à cet effet.
+
+### Exemple de structure HTML (`<ul> / <li>`)
 
 ```html
 <div class="tabs js-tabs">
@@ -77,4 +81,73 @@ Onglets pour panneaux de contenu.
 }
 ```
 
-Voir la démonstration dans index.html
+Voir la démonstration dans index-list.html
+
+### Exemple de structure HTML (`<nav>`)
+
+```html
+<div class="tabs js-tabs">
+  <nav class="tabs-menu">
+    <a href="#tab1" class="tabs-menu-link is-active">Onglet 1 actif</a>
+    <a href="#tab2" class="tabs-menu-link">Onglet 2</a>
+    <a href="#tab3" class="tabs-menu-link">Onglet 3</a>
+  </nav>
+
+  <div class="tabs-content">
+    <div id="tab1" class="tabs-content-item">Contenu 1.</div>
+    <div id="tab2" class="tabs-content-item">Contenu 2.</div>
+    <div id="tab3" class="tabs-content-item">Contenu 3.</div>
+  </div>
+</div>
+```
+
+```css
+.tabs-menu {
+  border-bottom: 2px solid #ddd;
+}
+
+.tabs-menu-link {
+  display: block;
+  margin-bottom: -2px;
+  padding: 1em 2em;
+  border-bottom: 4px solid transparent;
+  text-decoration: none;
+  transition: .25s;
+  transition-property: color, border, background-color;
+}
+
+.tabs-menu-link.is-active {
+  border-bottom-color: #ddd;;
+  outline: 0;
+}
+.tabs-menu-link:focus {
+  border-bottom-color: olivedrab;
+  color: olivedrab;
+  outline: 0;
+}
+
+@media (min-width: 576px) {
+  .tabs-menu-link {
+    display: inline-block;
+  }
+}
+
+.tabs-content-item {
+  padding-top: 10px;
+}
+
+.tabs-content-item[aria-hidden="true"] {
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tabs-content-item[aria-hidden="false"] {
+  visibility: visible;
+}
+```
+
+Voir la démonstration dans index-nav.html
