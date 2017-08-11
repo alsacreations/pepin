@@ -55,7 +55,7 @@
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
       // Navigate with clicks
-      $(plugin.settings.selectorLinks,$element).off('click.tabs').on('click.tabs', function(e) {
+      $element.off('click.tabs', plugin.settings.selectorLinks).on('click.tabs', plugin.settings.selectorLinks, function(e) {
         plugin.switchClasses($(this));
         plugin.switchContent($(this).attr('href'));
         e.preventDefault();

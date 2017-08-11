@@ -34,7 +34,7 @@
 
       // Event Handlers on HTML components inside the plugin
       var registerEvents = function() {
-        $element.on('click.typosize').on('click.typosize', function(e) {
+        $element.off('click.typosize').on('click.typosize', function(e) {
           e.preventDefault();
           plugin.toggleTypoSize();
         });

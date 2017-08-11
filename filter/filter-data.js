@@ -38,7 +38,7 @@
 
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
-      $element.on('change.filterData', plugin.doFilter);
+      $element.off('change.filterData').on('change.filterData', plugin.doFilter);
     };
 
     // Do the filter on items

@@ -40,7 +40,7 @@
 
     // Event Handlers on HTML components inside the plugin
     var registerEvents = function() {
-      $(plugin.settings.toggler, $element).off('click.selection').on('click.selection', function(e) {
+      $element.off('click.selection', plugin.settings.toggler).on('click.selection', plugin.settings.toggler, function(e) {
         $element.toggleClass(plugin.settings.classSelected, $(this).is(':checked'));
         $element.attr('aria-selected', $(this).is(':checked').toString());
       });

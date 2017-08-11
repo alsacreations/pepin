@@ -61,8 +61,8 @@
 
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
-      $element.on('click.toggletrigger', plugin.toggleTarget);
-      $element.on('toggle-trigger-off', plugin.toggleOff);
+      $element.off('click.toggletrigger').on('click.toggletrigger', plugin.toggleTarget);
+      $element.off('toggle-trigger-off').on('toggle-trigger-off', plugin.toggleOff);
     };
 
     // Toggle the state on the target element (public method)

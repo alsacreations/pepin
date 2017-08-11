@@ -44,10 +44,10 @@
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
       // Hide/show with clicks
-      $(plugin.settings.selectorHeader,$element).off('click.accordion').on('click.accordion', function(e) {
+      $element.off('click.accordion', plugin.settings.selectorHeader).on('click.accordion', plugin.settings.selectorHeader, function(e) {
         plugin.switchPanels($(this));
         e.preventDefault();
-      }).off('keydown.accordion').on('keydown.accordion', function(e) {
+      }).off('keydown.accordion', plugin.settings.selectorHeader).on('keydown.accordion', plugin.settings.selectorHeader, function(e) {
         switch(e.keyCode) {
           case 13:
           case 32:
