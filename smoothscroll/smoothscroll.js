@@ -9,7 +9,8 @@
 
       var defaults = {
          target:null,
-         speed:500
+         speed:500,
+         classActive: 'is-active'
       };
 
       var plugin = this;
@@ -35,21 +36,31 @@
 
       // Event Handlers on HTML components inside the plugin
       var registerEvents = function() {
-        $element.off('click.smoothscroll').on('click.smoothscroll', function(e) {
-          e.preventDefault();
-          var $target;
-          if(plugin.settings.target) $target = $(plugin.settings.target);
-          else if($(this).attr('href')) $target = $($(this).attr('href'));
-          plugin.scrollTo($target);
-        });
+        $element.off('click.smoothscroll').on('click.smoothscroll', plugin.doScroll);
       };
 
-      // Plugin do something
+      // Plugin test if scroll
+      plugin.doScroll = function(e) {
+        e.preventDefault();
+        var $target;
+        if(plugin.settings.target) $target = $(plugin.settings.target);
+        else if($(this).attr('href')) $target = $($(this).attr('href'));
+        plugin.scrollTo($target);
+        $('.js-smoothscroll').removeClass(plugin.settings.classActive);
+        $(this).add($target).addClass(plugin.settings.classActive);
+      };
+
+      // Plugin do scroll
       plugin.scrollTo = function($target) {
          if($target.length<1) return;
          $target.attr('tabindex','-1'); // a11y
-         $('body,html').animate({scrollTop:$target.offset().top},plugin.settings.speed);
+         $('body,html').animate({scrollTop:$target.offset().top},plugin.settings.speed, plugin.afterScroll);
          $target.focus().removeAttr('tabindex'); // a11y
+      };
+
+      // After scroll event (public method)
+      plugin.afterScroll = function() {
+        // Nothing to do by default
       };
 
       plugin.init();
