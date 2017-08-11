@@ -3,7 +3,7 @@
  Plugin description
 
  @contributors:
- @date-created: 2016-02-05
+ @date-created:
  */
 
 (function($) {

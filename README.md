@@ -12,6 +12,8 @@ Voir aussi les [Snippets](https://github.com/alsacreations/snippets) et [Guideli
 * Est protégé pour ne pas s'exécuter plusieurs fois (par erreur) sur le même élément.
 * Accès facile aux paramètres internes et autres méthodes.
 
+Les scripts fournis font au maximum attention à leur réutilisabilité (plusieurs fois sur un même document sans conflit) et à leur capacité à se ré-adapter si leur structure change (ex : ajout d'un item dans des onglets, dans un menu accordéon).
+
 ## Usage
 
 * Modifier le nom du plugin `pluginName`.
@@ -79,19 +81,17 @@ Plusieurs scripts/plugins jQuery sont proposés comme base de travail :
 
 | Nom  | Description | Statut | Doc |
 | ------------- | ------------- | ------------- | ------------- |
-| Accordion | Blocs déployables en accordéon  | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
-| Anchor | Ancres provoquant un scroll vers la destination | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
-| Back-to-top | Retour en haut de page | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
-| Filter | Filtrage de données sur la page / Auto-complétion et recherche d'éléments sur la page | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
-| Offcanvas | Principe de déploiement off-canvas (ex : menu) | En cours | <span style="color:orange">TODO</span> |
-| Selection | Eléments parents sélectionnables (ex : checkbox/radio) | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
-| Slider | Défilement de contenu de type carousel | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
-| Slideshow | Défilement de contenu de type diaporama | <span style="color:green">OK</span> | En cours |
-| SmoothScroll | Défilement de page (vertical en général) suite au clic sur un lien/bouton | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
-| Sticky | Elément fixé en sticky au scroll | <span style="color:green">OK</span> | <span style="color:orange">TODO</span> |
-| Tabs | Onglets | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
-| Toggle | Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance (ex : afficher/masquer un élément, listes déroulantes, agir sur les cellules d'un tableau, etc) | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
-| Typosize | Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices | <span style="color:green">OK</span> | <span style="color:green">OK</span> |
+| Accordion | Blocs déployables en accordéon  | OK | OK |
+| Filter | Filtrage de données sur la page / Auto-complétion et recherche d'éléments sur la page | OK | TODO |
+| Offcanvas | Principe de déploiement off-canvas (ex : menu) | En cours | TODO |
+| Selection | Eléments parents sélectionnables (ex : checkbox/radio) | OK | OK |
+| Slider | Défilement de contenu de type carousel | OK | TODO |
+| Slideshow | Défilement de contenu de type diaporama | OK | En cours |
+| SmoothScroll | Défilement de page (vertical en général) suite au clic sur un lien/bouton | OK | OK |
+| Sticky | Elément fixé en sticky au scroll | OK | TODO |
+| Tabs | Onglets | OK | OK |
+| Toggle | Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance (ex : afficher/masquer un élément, listes déroulantes, agir sur les cellules d'un tableau, etc) | OK | OK |
+| Typosize | Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices | OK | OK |
 | - | Liens d'évitement | Prévu | - |
 | - | Menu déroulant | Prévu | - |
 | - | Modale | Prévu | - |
