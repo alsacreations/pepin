@@ -192,6 +192,8 @@
 
   };
 
-  $('.js-directory').filterDirectory();
+  $(document).ready(function() {
+    $('.js-directory').filterDirectory();
+  });
 
 })(jQuery);

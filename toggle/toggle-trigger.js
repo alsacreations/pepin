@@ -110,6 +110,8 @@
 
   };
 
-  $('.js-toggle-trigger').toggleTrigger();
+  $(document).ready(function() {
+    $('.js-toggle-trigger').toggleTrigger();
+  });
 
 })(jQuery);

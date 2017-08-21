@@ -92,6 +92,8 @@
 
   };
 
-  $('.js-toggle-tablecells').toggleTablecells();
+  $(document).ready(function() {
+    $('.js-toggle-tablecells').toggleTablecells();
+  });
 
 })(jQuery);

@@ -78,6 +78,8 @@
 
    };
 
-   $('.js-smoothscroll').smoothscroll();
+  $(document).ready(function() {
+    $('.js-smoothscroll').smoothscroll();
+  });
 
  })(jQuery);

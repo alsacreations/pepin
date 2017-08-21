@@ -76,6 +76,8 @@
 
   };
 
-  $('.js-filter-data').filterData();
+  $(document).ready(function() {
+    $('.js-filter-data').filterData();
+  });
 
 })(jQuery);

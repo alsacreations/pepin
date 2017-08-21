@@ -147,6 +147,8 @@ jQuery(document).ready(function($) {
 
  };
 
- $('.js-sticky-nav').stickyNav();
+  $(document).ready(function() {
+    $('.js-sticky-nav').stickyNav();
+  });
 
 })(jQuery);
