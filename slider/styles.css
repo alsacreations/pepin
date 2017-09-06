@@ -1,0 +1,136 @@
+.js-slider {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+
+  /* Values must match <img> dimensions */
+  width: 800px;
+  height: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* wrapper */
+.slider-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+/* slide */
+.slider-item {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  transition-property: transform; /* transition effect */
+  transition-duration: 300ms; /* transition effect */
+}
+
+.slider-item.slider-outside-right {
+  position: absolute;
+  z-index: 1;
+  transform: translate(100%);
+  transition-delay: 0; /* should be higher than .slider-item transition-duration */
+}
+
+.slider-item.slider-outside-left {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-100%);
+  transition-delay: 0; /* should be higher than .slider-item transition-duration */
+}
+
+.slider-item.slider-inside {
+  position: absolute;
+  z-index: 3;
+  transition-delay: 0;
+  transform: translate(0);
+}
+
+/* Slide */
+/* link */
+.slider-item-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  /*@extend .clearfix;*/
+}
+
+/* image */
+.slider-item-img {
+  float: left;
+}
+
+/* Slider pagination */
+.slider-pagination {
+  position: absolute;
+  bottom: 2rem;
+  right: 4rem;
+  z-index: 37;
+}
+
+.slider-pagination-list {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0;
+}
+
+.slider-pagination-list-item {
+  display: inline-block;
+}
+
+.slider-pagination-list-link {
+  display: block;
+  margin-left: 0.3rem;
+  text-decoration: none;
+
+  width: 1rem;
+  height: 1rem;
+  float: left;
+  background: blue;
+  text-indent: -5000px;
+  margin-left: 1rem;
+  border-radius: 50%;
+}
+
+.slider-pagination-list-link-active {
+  background: cyan;
+}
+.slider-pagination-list-link:focus,
+.slider-pagination-list-link:hover {
+  background: white;
+}
+
+.slider-nav {
+  line-height: 0;
+  height: 0
+}
+
+.slider-nav a {
+  width: 48px;
+  height: 70px;
+  position: absolute;
+  top: 115px;
+  z-index: 3;
+  color: white;
+  text-indent: 0;
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: transparent;
+  transition: background-color .2s;
+}
+
+.slider-nav a:hover, .slider-nav a:active, .slider-nav a:focus {
+  background: rgba(#000, .2);
+}
+
+.slider-nav a.next {
+  right: 0;
+  left: auto;
+}
+
+.slider-nav a.prev {
+  left: 0;
+}

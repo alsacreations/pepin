@@ -53,10 +53,13 @@
       selectorControlBtn: '.slider-control-btn',
       classControlBtnPlay: 'slider-control-btn-play',
       classControlBtnPause: 'slider-control-btn-pause',
+      selectorControlPrev: '.slider-nav .prev',
+      selectorControlNext: '.slider-nav .next',
       classActive: 'slider-item-active',
       classActiveLink: 'slider-pagination-list-link-active',
       autoTimer: 1500,
       autoPlay: false,
+      loop: true,
       touchEnabled: true,
       touching: false,
       animating: false,
@@ -150,6 +153,17 @@
 
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
+      // Click on nav
+      $(plugin.settings.selectorControlPrev, $element).unbind('click.slider').bind('click.slider', function(e) {
+        plugin.autoplayStop();
+        plugin.scrollPrev();
+        e.preventDefault();
+      });
+      $(plugin.settings.selectorControlNext, $element).unbind('click.slider').bind('click.slider', function(e) {
+        plugin.autoplayStop();
+        plugin.scrollNext();
+        e.preventDefault();
+      });
       // Click on item (pagination) links
       $(plugin.settings.selectorLinks, $element).off('click.slider').on('click.slider', function(e) {
         var index = $(this).index();
@@ -168,7 +182,7 @@
             break;
           case 39:
           case 40:
-            plugin.scrollNext(false, true);
+            plugin.scrollNext(true);
             plugin.autoplayStop();
             e.preventDefault();
             break;
@@ -205,9 +219,8 @@
           }).children('a').attr({
             'tabindex': '0'
           });
-          $targetItem.nextAll().removeClass('slider-inside').addClass('slider-outside-right');
-          // Near last one ? Except for the first that may accept a transition from last item
-          $targetItem.prevAll().removeClass('slider-inside').not('.slider-outside-right').addClass('slider-outside-left');
+          $targetItem.nextAll().removeClass('slider-inside slider-outside-left').addClass('slider-outside-right');
+          $targetItem.prevAll().removeClass('slider-inside slider-outside-right').addClass('slider-outside-left');
           $targetItem.removeClass('slider-outside-right slider-outside-left').addClass('slider-inside');
         }
         plugin.settings.activeIndex = slideIndex;
@@ -235,7 +248,7 @@
     // Start auto play
     plugin.autoplayStart = function() {
       plugin.settings.interval = setInterval(function() {
-        plugin.scrollNext(true, false);
+        plugin.scrollNext(false);
       }, plugin.settings.autoTimer);
       plugin.settings.autoPlay = true;
       var $btn = $(plugin.settings.selectorControlBtn, $element);
@@ -250,35 +263,27 @@
       $btn.text($btn.data('txtoff')).removeClass(plugin.settings.classControlBtnPause).addClass(plugin.settings.classControlBtnPlay);
     };
 
-    // Scroll to next content
-    plugin.scrollNext = function(loop, setFocus) {
+    // Scroll to next item
+    plugin.scrollNext = function(setFocus) {
       if (plugin.settings.animating) return false;
-      var goIndex = plugin.settings.activeIndex + 1;
-      // Go to start if needed (with loop)
+      // Go to start if needed with loop
       var $items = $(plugin.settings.selectorItem, $element);
-      // Near last one ?
-      if (goIndex == $items.length-1) {
-        $items.first().removeClass('slider-outside-left').addClass('slider-outside-right');
-      }
-      if (goIndex >= $items.length) {
-        if (loop) {
-          goIndex = 0;
-          $items.removeClass('slider-outside-left').addClass('slider-outside-right');
-          plugin.scrollToSlide(goIndex);
-          plugin.setActiveLink(goIndex, setFocus);
-        }
-      } else {
-        plugin.scrollToSlide(goIndex);
-        plugin.setActiveLink(goIndex, setFocus);
-      }
+      if (plugin.settings.activeIndex > $items.length-1 && !plugin.settings.loop) return;
+      var goIndex = plugin.settings.activeIndex + 1;
+      if (goIndex > $items.length-1) goIndex = 0;
+      plugin.scrollToSlide(goIndex);
+      plugin.setActiveLink(goIndex, setFocus);
     };
 
-    // Scroll to previous content
+    // Scroll to previous item
     plugin.scrollPrev = function(setFocus) {
       if (plugin.settings.animating) return false;
       var goIndex = plugin.settings.activeIndex - 1;
-      // Go to start if needed
-      if (goIndex < 0) goIndex = 0;
+      // Loop to end if needed
+      if (goIndex < 0 && plugin.settings.loop) {
+        var $items = $(plugin.settings.selectorItem, $element);
+        goIndex = $items.length -1;
+      }
       plugin.scrollToSlide(goIndex);
       plugin.setActiveLink(goIndex, setFocus);
     };
