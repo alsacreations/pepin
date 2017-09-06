@@ -15,6 +15,7 @@ Changements de classe sur un élément B déclenchés par un élément A.
 * `selectorTargetInvert`: sélecteur de la cible inversée (la classe est ajoutée alors qu'elle est supprimée de l'élément cible selectorTarget, et inversement)
 * `selectorToggleInvert`: cible inversée à déclencher - utile pour les listes déroulantes dont un seul élément doit être actif à la fois
 * `selectorContainer`: sélecteur de conteneur si la cible doit être restreinte à un ancêtre commun
+* `autoOffEvent`: événement extérieur désactivant le toggle, par exemple un clic sur la racine `<html>` pour fermer un menu déployé (défaut : `false`, exemple : `click`)
 
 ### Exemples
 
