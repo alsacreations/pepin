@@ -18,6 +18,7 @@
       selectorTarget:'.js-toggle-target',
       selectorTargetInvert:undefined,
       selectorToggleInvert:undefined,
+      autoOffEvent:false, // toggle off when "outside" event (eg 'click')
       useChecked:false // if true, $element needs to be checked (input radio/checkbox) to activate the target
     };
 
@@ -63,6 +64,12 @@
     var registerEvents = function() {
       $element.off('click.toggletrigger').on('click.toggletrigger', plugin.toggleTarget);
       $element.off('toggle-trigger-off').on('toggle-trigger-off', plugin.toggleOff);
+      if(plugin.settings.autoOff) {
+        $('html').on(plugin.settings.autoOff+'.toggleAutoOff', plugin.toggleOff);
+        $element.on(plugin.settings.autoOff+'.toggletriggerOff', function(e) {
+          e.stopPropagation();
+        });
+      }
     };
 
     // Toggle the state on the target element (public method)
