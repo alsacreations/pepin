@@ -154,12 +154,12 @@
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
       // Click on nav
-      $(plugin.settings.selectorControlPrev, $element).unbind('click.slider').bind('click.slider', function(e) {
+      $(plugin.settings.selectorControlPrev, $element).off('click.slider').on('click.slider', function(e) {
         plugin.autoplayStop();
         plugin.scrollPrev();
         e.preventDefault();
       });
-      $(plugin.settings.selectorControlNext, $element).unbind('click.slider').bind('click.slider', function(e) {
+      $(plugin.settings.selectorControlNext, $element).off('click.slider').on('click.slider', function(e) {
         plugin.autoplayStop();
         plugin.scrollNext();
         e.preventDefault();
