@@ -10,6 +10,7 @@
     // Default settings values
     var defaults = {
       active:false,
+      events:'click',
       target:undefined,
       targetInvert:undefined,
       classToggle:'js-hidden',
@@ -62,7 +63,8 @@
 
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
-      $element.off('click.toggletrigger').on('click.toggletrigger', plugin.toggleTarget);
+      var ev = plugin.settings.events.split(' ').map(function(e) { return e+'.toggletrigger'; }).join(' ');
+      $element.off(ev).on(ev, plugin.toggleTarget);
       $element.off('toggle-trigger-off').on('toggle-trigger-off', plugin.toggleOff);
       if(plugin.settings.autoOffEvent) {
         $('html').on(plugin.settings.autoOffEvent+'.toggleAutoOff', plugin.toggleOff);
