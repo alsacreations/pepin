@@ -34,7 +34,6 @@
     plugin.init = function() {
       plugin.settings = $.extend({}, defaults, options);
       updateSettingsFromHTMLData();
-      registerEvents();
       if(plugin.settings.useChecked) plugin.settings.active = $element.is(':checked');
       else plugin.settings.active = $element.hasClass(plugin.settings.classActive);
       if(!plugin.settings.target) {
@@ -53,6 +52,7 @@
       if(plugin.settings.target && !plugin.settings.active) {
         plugin.settings.target.addClass(plugin.settings.classToggle);
       }
+      registerEvents();
     };
 
     // Reads plugin settings from HTML data-* attributes (camelCase)
