@@ -90,8 +90,11 @@
       if(plugin.settings.toggleInvert && plugin.settings.active) {
         plugin.settings.toggleInvert.not($element).trigger('toggle-trigger-off');
       }
+
       // If needed : toggle internal icon state
       // $('.icon-plus, .icon-minus',$element).toggleClass('icon-plus icon-minus');
+
+      // A11y : text label
       var textLabel = $('span.visually-hidden',$element);
       if(plugin.settings.active) textLabel.text(textLabel.data('togglemsg-on'));
       else textLabel.text(textLabel.data('togglemsg-off'));
