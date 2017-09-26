@@ -64,9 +64,9 @@
     var registerEvents = function() {
       $element.off('click.toggletrigger').on('click.toggletrigger', plugin.toggleTarget);
       $element.off('toggle-trigger-off').on('toggle-trigger-off', plugin.toggleOff);
-      if(plugin.settings.autoOff) {
-        $('html').on(plugin.settings.autoOff+'.toggleAutoOff', plugin.toggleOff);
-        $element.on(plugin.settings.autoOff+'.toggletriggerOff', function(e) {
+      if(plugin.settings.autoOffEvent) {
+        $('html').on(plugin.settings.autoOffEvent+'.toggleAutoOff', plugin.toggleOff);
+        $element.on(plugin.settings.autoOffEvent+'.toggletriggerOff', function(e) {
           e.stopPropagation();
         });
       }
