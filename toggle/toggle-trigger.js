@@ -68,7 +68,7 @@
       $element.off('toggle-trigger-off').on('toggle-trigger-off', plugin.toggleOff);
       if(plugin.settings.autoOffEvent) {
         $('html').on(plugin.settings.autoOffEvent+'.toggleAutoOff', plugin.toggleOff);
-        $element.on(plugin.settings.autoOffEvent+'.toggletriggerOff', function(e) {
+        $element.add(plugin.settings.target).on(plugin.settings.autoOffEvent+'.toggletriggerOff', function(e) {
           e.stopPropagation();
         });
       }
