@@ -4,7 +4,7 @@ Pepin est un modèle (parmi tant d'autres) de plugin jQuery modulaire, accompagn
 
 Ils pourraient dans le futur être adaptés en JavaScript Vanilla (sans dépendance vis-à-vis d'un framework).
 
-Voir aussi les [Guidelines](https://github.com/alsacreations/guidelines)
+Voir aussi nos [Guidelines](https://github.com/alsacreations/guidelines).
 
 ## Intérêt du modèle plugin.js
 

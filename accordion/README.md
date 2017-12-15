@@ -31,7 +31,7 @@ Il peut y en avoir plusieurs par page.
 
 ```html
 <div class="js-accordion">
-  <h2 class="js-accordion-header">xxx <i class="icon-arrow" aria-hidden="true"></i></h2>
+  <h2 class="js-accordion-header">xxx <span class="icon-arrow" aria-hidden="true"></span></h2>
   <div class="js-accordion-panel">xxx</div>
 </div>
 ```

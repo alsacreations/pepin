@@ -117,7 +117,7 @@ Voir la démonstration dans index-list.html
 }
 
 .tabs-menu-link.is-active {
-  border-bottom-color: #ddd;;
+  border-bottom-color: #ddd;
   outline: 0;
 }
 .tabs-menu-link:focus {

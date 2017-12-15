@@ -21,7 +21,7 @@ Il peut y en avoir plusieurs par page.
 2. Définir par l'attribut `data-target` la cible vers laquelle il faudra faire défiler le contenu, avec un sélecteur CSS (de préférence un id #). Si cet attribut n'est pas défini, la valeur `href` est retenue et doit mener vers une ancre de la page.
 
 ```html
-<a class="js-smoothscroll" data-target="#menu">Retour au haut de page</button>
+<a class="js-smoothscroll" data-target="#menu">Retour au haut de page</a>
 ```
 
 Voir la démonstration dans index.html
