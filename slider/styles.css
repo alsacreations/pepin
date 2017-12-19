@@ -97,9 +97,9 @@
   width: 1rem;
   height: 1rem;
   float: left;
-  background: blue;
   text-indent: -5000px;
   margin-left: 1rem;
+  background: blue;
   border-radius: 50%;
 }
 
@@ -117,17 +117,17 @@
 }
 
 .slider-nav a {
-  width: 48px;
-  height: 70px;
   position: absolute;
   top: 115px;
   z-index: 3;
-  color: white;
-  text-indent: 0;
-  font-size: 70px;
   display: flex;
   justify-content: center;
   align-content: center;
+  width: 48px;
+  height: 70px;
+  text-indent: 0;
+  font-size: 2rem;
+  color: white;
   background: transparent;
   transition: background-color .2s;
 }
