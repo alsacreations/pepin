@@ -113,12 +113,12 @@
   background: white;
 }
 
-/* Control button "Lecture" / "Pause" (to be styled */
+/* Control button "Lecture" / "Pause" (to be 1/ styled and 2/ translated if your site isn't (only) in french) */
 /* .slider-control {} */
 
 /* .slider-control-btn {} */
 
-/* "Précédent" and "Suivant" links (SVG arrows) */
+/* "Précédent" and "Suivant" links (SVG arrows, title element must be translated if your site isn't (only) in french) */
 .slider-nav {
   line-height: 0;
   height: 0
