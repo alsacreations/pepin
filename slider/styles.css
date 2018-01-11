@@ -95,15 +95,12 @@
 }
 
 .slider-pagination-list-link {
-  display: block;
-  margin-left: 0.3rem;
-  text-decoration: none;
-
+  /* display: block; */
+  float: left;
   width: 1rem;
   height: 1rem;
-  float: left;
-  text-indent: -5000px;
-  margin-left: 1rem;
+  margin-left: 1rem; /* plus whitespace => usually 20px */
+  text-decoration: none;
   background: blue;
   border-radius: 50%;
 }
@@ -115,6 +112,11 @@
 .slider-pagination-list-link:hover {
   background: white;
 }
+
+/* Control button "Lecture" / "Pause" (to be styled */
+/* .slider-control {} */
+
+/* .slider-control-btn {} */
 
 /* "Précédent" and "Suivant" links (SVG arrows) */
 .slider-nav {
@@ -138,8 +140,13 @@
   transition: background-color .2s;
 }
 
-.slider-nav a:hover, .slider-nav a:active, .slider-nav a:focus {
-  background: rgba(#000, .2);
+.slider-nav a.next {
+  right: 0;
+  left: auto;
+}
+
+.slider-nav a.prev {
+  left: 0;
 }
 
 .slider-nav svg {
@@ -148,11 +155,8 @@
   fill: white;
 }
 
-.slider-nav a.next {
-  right: 0;
-  left: auto;
-}
-
-.slider-nav a.prev {
-  left: 0;
+.slider-nav a:hover svg,
+.slider-nav a:active svg,
+.slider-nav a:focus svg {
+  fill: #EDEDC0;
 }
