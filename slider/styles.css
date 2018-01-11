@@ -1,3 +1,7 @@
+/*
+ * Pepin slider: styles
+ *
+ */
 .js-slider {
   position: relative;
   overflow: hidden;
@@ -9,6 +13,7 @@
   margin: 0 auto 2rem;
 }
 
+/* Hides content visually though it's still perceived by screen reader users */
 .visually-hidden {
   position: absolute !important;
   border: 0 !important;
@@ -71,7 +76,7 @@
   float: left;
 }
 
-/* Slider pagination */
+/* Slider pagination (bullets) */
 .slider-pagination {
   position: absolute;
   bottom: 2rem;
@@ -111,6 +116,7 @@
   background: white;
 }
 
+/* "Précédent" and "Suivant" links (SVG arrows) */
 .slider-nav {
   line-height: 0;
   height: 0
