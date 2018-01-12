@@ -1,8 +1,26 @@
+/*
+ * Pepin - slideshow: CSS for demo
+ */
+
+/*
+ * Utilities
+ */
+/* Hides content visually though it's still perceived by screen reader users */
+.visually-hidden {
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+
 .slideshow {
   position: relative;
   overflow: hidden;
-  padding: 0 0 .5rem;
-  background-color: #FFFFFF;
+  padding: 0 0 0.5rem;
+  background-color: #FFF;
 }
 
 /* slide content */
@@ -12,26 +30,26 @@
 
 /* wrapper */
 .slideshow-wrapper {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  /*margin: 0 .2rem; // same values from .slideshow padding*/
   position: relative;
-  /*transition: transform .3s;*/
+  display: flex;
+  width: 100%;
+  height: 100%;
   min-height: 370px;
+  /*transition: transform .3s;*/
 }
 
 /* slide */
 .slideshow-item {
   position: absolute;
   display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
+    flex-direction: column;
+    flex-shrink: 0;
   width: 100%;
   height: auto;
-  background-color: #FFFFFF;
+  background-color: #FFF;
   transition: opacity 0.8s;
 }
+
 .slideshow-item[aria-hidden="true"] {
   opacity: 0;
 }
@@ -43,6 +61,7 @@
 
 /* image */
 .slideshow-item-img img {
+  display: block; /* removes space below image between border and image */
   width: 100%;
 }
 
@@ -61,25 +80,32 @@
 /*
  * Slide controls
  */
-.slideshow-item-control-left,
-.slideshow-item-control-right {
+ .slideshow-item-control {
+   position: absolute;
+     top: 0;
+     left: 0;
+   width: 100%;
+   padding-top: calc(50% / 4 * 3); /* Allows perfect centering if we know the ratio of images: half the width of image / its ratio (320/240 in this demo) */
+ }
+
+[class*="slideshow-item-control-"] {
   display: block;
   position: absolute;
-  top: 50%;
+    /* top: 50%; */
   height: 4rem;
   width: 2rem;
-  margin-top: -8rem;
+  border: 0;
+  margin-top: -2rem; /* minus half-height ⇒ vertical centering */
   padding: 0;
   line-height: 1;
   background: none;
-  border: 0;
   border-radius: 0;
   cursor: pointer;
-  /* arrow */
 }
-.slideshow-item-control-left::before, .slideshow-item-control-left::after,
-.slideshow-item-control-right::before,
-.slideshow-item-control-right::after {
+
+/* arrow */
+[class*="slideshow-item-control-"]::before,
+[class*="slideshow-item-control-"]::after {
   content: "";
   position: relative;
   right: -1rem;
@@ -89,25 +115,28 @@
   background: #FFF;
   box-shadow: 1px 0 4px rgba(0, 0, 0, 0.15);
 }
+
 .slideshow-item-control-left::after,
 .slideshow-item-control-right::after {
-  top: -.65rem;
+  top: -0.65rem;
 }
 
 /* arrow left */
 .slideshow-item-control-left {
-  left: .5rem;
+  left: 0.5rem;
 }
+
 .slideshow-item-control-left::before {
   transform: rotate(45deg);
 }
+
 .slideshow-item-control-left::after {
   transform: rotate(-45deg);
 }
 
 /* arrow right */
 .slideshow-item-control-right {
-  right: .5rem;
+  right: 0.5rem;
 }
 .slideshow-item-control-right::before {
   transform: rotate(-45deg);
@@ -115,6 +144,7 @@
 .slideshow-item-control-right::after {
   transform: rotate(45deg);
 }
+
 
 /*
  * Thumbnails
@@ -141,7 +171,7 @@
 .slideshow-thumbnails-list-item {
   width: 20%;
   flex-shrink: 0;
-  padding: 0 .1rem;
+  padding: 0 0.1rem;
 }
 
 .slideshow-thumbnails-list-link {
@@ -149,53 +179,56 @@
   border: 3px solid #FFF;
 }
 .slideshow-thumbnails-list-link img {
+  display: block; /* removes space below image between border and image */
   width: 100%;
 }
 .slideshow-thumbnails-list-link.is-active {
-  border-color: #0088CE;
+  border-color: #07B;
 }
 
 /*
  * Thumbnails controls
  */
-.slideshow-thumbnails-control-left,
-.slideshow-thumbnails-control-right {
+[class*="slideshow-thumbnails-control-"] {
   display: block;
   position: absolute;
-  top: 50%;
-  margin-top: -1.2rem;
+    top: 50%; /* vertical centering (1/2) */
+  transform: translateY(-50%); /* vertical centering (2/2) */
+  border: 0;
   padding: 0;
   background: none;
-  border: 0;
   border-radius: 0;
   cursor: pointer;
 }
-.slideshow-thumbnails-control-left .icon-arrow,
-.slideshow-thumbnails-control-right .icon-arrow {
-  display: inline-block;
-  width: 0.8rem;
-  height: 0.5rem;
-  background-size: .8rem .5rem;
+[class*="slideshow-thumbnails-control-"] svg {
+  display: block; /* removes space below image between border and image */
+  width: 1rem;
+  height: 2rem;
+  fill: #07B;
 }
-.slideshow-thumbnails-control-left[aria-hidden="true"],
-.slideshow-thumbnails-control-right[aria-hidden="true"] {
+
+[class*="slideshow-thumbnails-control-"][aria-hidden="true"] {
   display: none;
 }
 
 /* arrow left */
 .slideshow-thumbnails-control-left {
-  left: .5rem;
+  left: 0.5rem;
 }
 
 /* arrow right */
 .slideshow-thumbnails-control-right {
-  right: .5rem;
+  right: 0.5rem;
 }
 
+
+/*
+ * Mobile <= 768px
+ */
 @media (max-width: 768px) {
   /* slideshow */
   .slideshow {
-    padding: 0 0 .5rem;
+    padding: 0 0 0.5rem;
   }
 
   .slideshow-wrapper {
@@ -238,6 +271,7 @@
     font-weight: normal;
   }
   */
+
   /* pagination */
   .slideshow-pagination {
     text-align: center;
@@ -259,26 +293,38 @@
     border-radius: 0;
     background: none;
   }
-  .slideshow-pagination-list-link::before, .slideshow-pagination-list-link::after {
+
+  .slideshow-pagination-list-link::before,
+  .slideshow-pagination-list-link::after {
     content: "";
     display: block;
     margin-left: auto;
     margin-right: auto;
     transition: background .2s;
   }
+
+  /* circle */
   .slideshow-pagination-list-link::before {
-    height: 6px;
     width: 6px;
-    background: #E0DED8;
+    height: 6px;
+    background: #555;
     border-radius: 50%;
   }
+  /* border */
   .slideshow-pagination-list-link::after {
     width: 10px;
     height: 2px;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     background: none;
   }
+
   .slideshow-pagination-list-link:focus, .slideshow-pagination-list-link:hover {
     background: none;
+  }
+
+  /* active slide */
+  .slideshow-pagination-list-link-active::before,
+  .slideshow-pagination-list-link-active::after {
+    background-color: #07B;
   }
 }
