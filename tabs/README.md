@@ -29,19 +29,19 @@ Certains paramètres sont optionnels selon votre structure. Par exemple si les o
 <div class="tabs js-tabs">
   <ul class="tabs-menu">
     <li class="tabs-menu-item">
-      <a href="#tab1" class="tabs-menu-link is-active">Onglet 1 initialement actif</a>
+      <a href="#tablist1" class="tabs-menu-link is-active">Onglet 1 initialement actif</a>
     </li>
     <li class="tabs-menu-item">
-      <a href="#tab2" class="tabs-menu-link">Onglet 2 inactif</a>
+      <a href="#tablist2" class="tabs-menu-link">Onglet 2 inactif</a>
     </li>
     <li class="tabs-menu-item">
-      <a href="#tab3" class="tabs-menu-link">Onglet 3 inactif</a>
+      <a href="#tablist3" class="tabs-menu-link">Onglet 3 inactif</a>
     </li>
   </ul>
   <div class="tabs-content">
-    <div id="tab1" class="tabs-content-item">Contenu panneau 1</div>
-    <div id="tab2" class="tabs-content-item">Contenu panneau 2</div>
-    <div id="tab3" class="tabs-content-item">Contenu panneau 3</div>
+    <div id="tablist1" class="tabs-content-item">Contenu panneau 1</div>
+    <div id="tablist2" class="tabs-content-item">Contenu panneau 2</div>
+    <div id="tablist3" class="tabs-content-item">Contenu panneau 3</div>
   </div>
 </div>
 ```
@@ -91,15 +91,15 @@ Voir la démonstration dans index-list.html
 ```html
 <div class="tabs js-tabs">
   <nav class="tabs-menu">
-    <a href="#tab1" class="tabs-menu-link is-active">Onglet 1 initialement actif</a>
-    <a href="#tab2" class="tabs-menu-link">Onglet 2</a>
-    <a href="#tab3" class="tabs-menu-link">Onglet 3</a>
+    <a href="#tabnav1" class="tabs-menu-link is-active">Onglet 1 initialement actif</a>
+    <a href="#tabnav2" class="tabs-menu-link">Onglet 2</a>
+    <a href="#tabnav3" class="tabs-menu-link">Onglet 3</a>
   </nav>
 
   <div class="tabs-content">
-    <div id="tab1" class="tabs-content-item">Contenu 1.</div>
-    <div id="tab2" class="tabs-content-item">Contenu 2.</div>
-    <div id="tab3" class="tabs-content-item">Contenu 3.</div>
+    <div id="tabnav1" class="tabs-content-item">Contenu 1.</div>
+    <div id="tabnav2" class="tabs-content-item">Contenu 2.</div>
+    <div id="tabnav3" class="tabs-content-item">Contenu 3.</div>
   </div>
 </div>
 ```
