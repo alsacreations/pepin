@@ -29,7 +29,7 @@ Certains paramètres sont optionnels selon votre structure. Par exemple si les o
 <div class="tabs js-tabs">
   <ul class="tabs-menu">
     <li class="tabs-menu-item">
-      <a href="#tab1" class="tabs-menu-link is-active">Onglet 1 actif</a>
+      <a href="#tab1" class="tabs-menu-link is-active">Onglet 1 initialement actif</a>
     </li>
     <li class="tabs-menu-item">
       <a href="#tab2" class="tabs-menu-link">Onglet 2 inactif</a>
@@ -48,6 +48,7 @@ Certains paramètres sont optionnels selon votre structure. Par exemple si les o
 
 ```css
 .tabs-menu {
+  margin-bottom: 1px;
   list-style: none;
 }
 .tabs-menu-item {
@@ -56,9 +57,11 @@ Certains paramètres sont optionnels selon votre structure. Par exemple si les o
 }
 .tabs-menu-link {
   display: block;
+  padding: 0.5rem 1rem;
   text-decoration: none;
 }
-.tabs-menu-link:focus, .tabs-menu-link:hover {
+.tabs-menu-link:focus,
+.tabs-menu-link:hover {
   color: green;
 }
 .tabs-menu-link.is-active {
@@ -88,7 +91,7 @@ Voir la démonstration dans index-list.html
 ```html
 <div class="tabs js-tabs">
   <nav class="tabs-menu">
-    <a href="#tab1" class="tabs-menu-link is-active">Onglet 1 actif</a>
+    <a href="#tab1" class="tabs-menu-link is-active">Onglet 1 initialement actif</a>
     <a href="#tab2" class="tabs-menu-link">Onglet 2</a>
     <a href="#tab3" class="tabs-menu-link">Onglet 3</a>
   </nav>
