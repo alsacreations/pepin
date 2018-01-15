@@ -13,15 +13,33 @@
       display: block;
     }
     .beautiful {
-      background: tomato;
+    	padding: 0.25rem;
       color: white;
+			background: tomato;
     }
+
+		/* Layout */
+		body {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+			grid-gap: 1em;
+			font-family: sans-serif;
+		}
+
+		body > div {
+			border: 1px solid tomato;
+			padding: 1em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}
     </style>
 </head>
 <body>
 
   <div>
-    <p>Afficher ou masquer un élément (utilise .js-hidden par défaut)</p>
+    <h1>Afficher ou masquer un élément (utilise .js-hidden par défaut)</h1>
     <button class="js-toggle-trigger" data-selector-target=".hop1">Afficher/masquer</button>
     <ul class="hop1">
       <li>Item 1</li>
@@ -30,35 +48,27 @@
     </ul>
   </div>
 
-  <hr>
-
   <div>
-    <p>Changer la classe d'un autre élément</p>
+    <h1>Changer la classe d'un autre élément</h1>
     <button class="js-toggle-trigger" data-selector-target=".hop2" data-class-toggle="beautiful">Toggle !</button>
     <p class="hop2">Cible</p>
   </div>
 
-  <hr>
-
   <div>
-    <p>Changer la classe d'un autre élément (+ cible inversée)</p>
+    <h1>Changer la classe d'un autre élément (+ cible inversée)</h1>
     <button class="js-toggle-trigger" data-selector-target=".hop3" data-selector-target-invert=".hop4" data-class-toggle="beautiful">Toggle !</button>
     <p class="hop3">Cible</p>
     <p class="hop4">Cible inversée</p>
   </div>
 
-  <hr>
-
   <div>
-    <p>Changer la classe d'un autre élément en se basant sur checked</p>
+    <h1>Changer la classe d'un autre élément en se basant sur checked</h1>
     <input type="checkbox" class="js-toggle-trigger" data-selector-target-invert=".hop5" data-class-toggle="beautiful" data-use-checked="true" id="c1"> <label for="c1">Cochez-moi</label>
     <p class="hop5">Cible</p>
   </div>
 
-  <hr>
-
   <div>
-    <p>Dans un même conteneur</p>
+    <h1>Dans un même conteneur</h1>
     <div class="js-toggle-container">
       <button class="js-toggle-trigger" data-selector-container=".js-toggle-container" data-selector-target=".hop6" data-class-toggle="beautiful">Toggle !</button>
       <p class="hop6">Cible concernée car dans le même conteneur</p>
@@ -66,10 +76,8 @@
     <p class="hop6">Cible non modifiée</p>
   </div>
 
-  <hr>
-
   <div>
-    <p>Liste déroulante simple (éléments indépendants)</p>
+    <h1>Liste déroulante simple (éléments indépendants)</h1>
     <button class="js-toggle-trigger" data-selector-target=".list1">Liste 1</button>
     <ul class="list1">
       <li>Item 1</li>
@@ -90,10 +98,8 @@
     </ul>
   </div>
 
-  <hr>
-
   <div>
-    <p>Liste déroulante avec un seul élément ouvert à la fois (éléments liés)</p>
+    <h1>Liste déroulante avec un seul élément ouvert à la fois (éléments liés)</h1>
     <button class="js-toggle-trigger group" data-selector-target=".list4" data-selector-toggle-invert=".group">Liste 4</button>
     <ul class="list4">
       <li>Item 1</li>
