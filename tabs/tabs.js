@@ -28,8 +28,8 @@
       plugin.settings = $.extend({}, defaults, options);
       updateSettingsFromHTMLData();
       registerEvents();
-      setAriaAttributes();
       plugin.switchContent(null);
+      setAriaAttributes();
     };
 
     // Reads plugin settings from HTML data-* attributes (camelCase)
@@ -40,15 +40,17 @@
 
     // Set initial ARIA attributes on elements
     var setAriaAttributes = function() {
-      $(plugin.settings.selectorList,$element).attr('role','tablist').find(plugin.settings.selectorListItems).attr('role','presentation').find(plugin.settings.selectorLinks).attr({'role':'tab','tabindex':'-1'}).each(function(index,item) {
+      $(plugin.settings.selectorList,$element).attr('role','tablist').find(plugin.settings.selectorListItems).attr('role','presentation');
+      $(plugin.settings.selectorList,$element).find(plugin.settings.selectorLinks).attr({'role':'tab','tabindex':'-1'}).each(function(index,item) {
         var target = $(this).attr('href');
-        // If the link is marked active with the class, then tabindex 0
-        if($(this).hasClass(plugin.settings.classActive)) {
-          $(this).attr('tabindex','0');
-        }
         // Establish relationships between tabs (links) and tabpanels
         $(this).attr('id','tablink'+index).attr('aria-controls',target.replace('#',''));
         $(target).attr('aria-labelledby','tablink'+index).attr('tabindex','0').attr('role','tabpanel');
+        // If the link is marked active with the class, then tabindex 0
+        if($(this).hasClass(plugin.settings.classActive)) {
+          $(this).attr('tabindex','0');
+          plugin.switchContent(target);
+        }
       });
     };
 
