@@ -44,12 +44,14 @@
       $(plugin.settings.selectorList,$element).find(plugin.settings.selectorLinks).attr({'role':'tab','tabindex':'-1'}).each(function(index,item) {
         var target = $(this).attr('href');
         // Establish relationships between tabs (links) and tabpanels
-        $(this).attr('id','tablink'+index).attr('aria-controls',target.replace('#',''));
-        $(target).attr('aria-labelledby','tablink'+index).attr('tabindex','0').attr('role','tabpanel');
+        if(target) {
+          $(this).attr('id','tablink'+index).attr('aria-controls',target.replace('#',''));
+          $(target).attr('aria-labelledby','tablink'+index).attr('tabindex','0').attr('role','tabpanel');
+        }
         // If the link is marked active with the class, then tabindex 0
         if($(this).hasClass(plugin.settings.classActive)) {
           $(this).attr('tabindex','0');
-          plugin.switchContent(target);
+          if(target) plugin.switchContent(target);
         }
       });
     };
