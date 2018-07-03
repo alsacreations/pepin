@@ -10,7 +10,9 @@
       var defaults = {
          target:null,
          speed:500,
-         classActive: 'is-active'
+         classActive: 'is-active',
+         scrollVisibilityThreshold: false, // px
+         visible: false,
       };
 
       var plugin = this;
@@ -37,6 +39,12 @@
       // Event Handlers on HTML components inside the plugin
       var registerEvents = function() {
         $element.off('click.smoothscroll').on('click.smoothscroll', plugin.doScroll);
+        if(plugin.settings.scrollVisibilityThreshold>0) $(window).on('scroll', plugin.switchVisibility);
+        // With jQuery debounce (better)
+        // https://raw.githubusercontent.com/cowboy/jquery-throttle-debounce/master/jquery.ba-throttle-debounce.min.js
+        /*if(plugin.settings.scrollVisibilityThreshold>0) $(window).on('scroll', jQuery.debounce(100, function () {
+          plugin.switchVisibility();
+        }));*/
       };
 
       // Plugin test if scroll
@@ -57,6 +65,18 @@
          $('body,html').animate({scrollTop:$target.offset().top},plugin.settings.speed, plugin.afterScroll);
          $target.focus().removeAttr('tabindex'); // a11y
       };
+     
+      // Element visibility (button/link)
+      plugin.switchVisibility = function () {
+        var st = $(window).scrollTop();
+        if(st > plugin.settings.scrollVisibilityThreshold && !plugin.settings.visible) {
+          plugin.settings.visible = true;
+          $element.removeClass('js-hidden');
+        } else if(plugin.settings.visible) {
+          plugin.settings.visible = false;
+          $element.addClass('js-hidden');
+        }
+      }
 
       // After scroll event (public method)
       plugin.afterScroll = function() {
