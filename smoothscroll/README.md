@@ -12,6 +12,9 @@ Il peut y en avoir plusieurs par page.
 
 * `target` : élément cible vers lequel défiler (défaut : `null`)
 * `speed` : vitesse d'animation en ms (défaut : `500`)
+* `classActive` : classe appliquée sur le déclencheur et la cible, facultatif (défaut : `is-active`)
+* `scrollVisibilityThreshold` : valeur de scroll à partir de laquelle déclencher la visibilité (défaut : `false`)
+* `visible` : état de visibilité du déclencheur (défaut : `false`)
 
 ### Exemples
 
