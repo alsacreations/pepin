@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+		<meta charset="UTF-8">
+		<title>Démo Copy</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <p>Ces exemples se basent sur des éléments utilisant pour leur valeur du texte simple (ex : span) et des éléments utilisant l'attribut <code>value</code> comme des boutons.</p>
+
+  <h1>Copie texte à texte :</h1>
+
+  <p>Elément origine : <button class="js-copy" data-copy-target=".destination1">Texte à recopier</button></p>
+  <p>Elément destination : <span class="destination1"></span></p>
+
+  <h1>Copie texte à value :</h1>
+
+  <p>Elément d'origine : <button class="js-copy" data-copy-target=".destination2" data-copy-target-mode="value">Texte à recopier</button></p>
+  <p>Elément destination : <input type="button" class="destination2" value="..."></p>
+
+  <h1>Copie value à texte :</h1>
+
+  <p>Elément d'origine : <input type="button" value="Texte à recopier" class="js-copy" data-copy-target=".destination3" data-copy-source-mode="value"></p>
+  <p>Elément destination : <span class="destination3"></span></p>
+
+  <h1>Copie value à value :</h1>
+
+  <p>Elément d'origine : <input type="button" value="Texte à recopier" class="js-copy" data-copy-target=".destination4" data-copy-source-mode="value"  data-copy-target-mode="value"></p>
+  <p>Elément destination : <input type="button" value="..." class="destination4"></p>
+
+  <h1>Copie texte à texte avec événement <code>mouseenter</code> souris :</h1>
+
+  <p>Elément origine : <button class="js-copy" data-copy-event="mouseenter" data-copy-target=".destination5">Texte à recopier</button></p>
+  <p>Elément destination : <span class="destination5"></span></p>
+
+  <h1>Copie texte à texte avec destinations multiples :</h1>
+
+  <p>Elément origine : <button class="js-copy" data-copy-target=".destination6, .destination7, .destination8">Texte à recopier</button></p>
+  <p>Eléments destination : <span class="destination6"></span> <span class="destination7"></span> <span class="destination8"></span></p>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="copy.js"></script>
+
+</body>
+</html>

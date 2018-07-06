@@ -102,6 +102,7 @@ Plusieurs scripts/plugins jQuery qui suivent ce modèle sont proposés comme bas
 | SmoothScroll | Défilement de page (vertical en général) suite au clic sur un lien/bouton | OK | OK |
 | Sticky | Elément fixé en sticky au scroll | OK | TODO |
 | Tabs | Onglets | OK | OK |
+| Copy | Recopie de texte d'un élément à l'autre | OK | OK |
 | Toggle | Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance (ex : afficher/masquer un élément, listes déroulantes, agir sur les cellules d'un tableau, etc) | OK | OK |
 | Typosize | Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices | OK | OK |
 | Modal | Fenêtres modales (popin) | En cours | TODO |
