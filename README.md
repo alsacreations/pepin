@@ -96,7 +96,7 @@ Plusieurs scripts/plugins jQuery qui suivent ce modèle sont proposés comme bas
 | Nom  | Description | Statut | Doc |
 | ------------- | ------------- | ------------- | ------------- |
 | Accordion | Blocs déployables en accordéon  | OK | OK |
-| Filter | Filtrage de données sur la page / Auto-complétion et recherche d'éléments sur la page | OK | TODO |
+| Filter | Filtrage de données sur la page / Auto-complétion et recherche d'éléments sur la page | OK | OK |
 | Offcanvas | Principe de déploiement off-canvas (ex : menu) | En cours | TODO |
 | Selection | Eléments parents sélectionnables (ex : checkbox/radio) | OK | OK |
 | Slider | Défilement de contenu de type carousel | OK | TODO |

@@ -1,6 +1,6 @@
 /**!
  Plugin filter data
- Filter elements displayed on the current page with data- attribut values
+ Filter elements displayed on the current page with data- attributes values
  */
 
 (function($) {
@@ -9,10 +9,13 @@
 
     // Default settings values
     var defaults = {
-      selectorCount: '.js-filter-count',
       selectorItemsToFilter: '.js-filter-item',
-      filterDataAttribute: 'filterYear',
-      classHidden: 'js-hidden'
+      filterDataAttribute: 'filterValue',
+      classHidden: 'js-hidden',
+      eventFilter: 'change',
+      selectorCount: '.js-filter-count',
+      selectorTotal: '.js-filter-total',
+      filterOperator: '=='
     };
 
     var plugin = this;
@@ -38,10 +41,19 @@
 
     // Set event handlers on HTML elements (private method)
     var registerEvents = function() {
-      $element.off('change.filterData').on('change.filterData', plugin.doFilter);
+      $element.off(plugin.settings.eventFilter+'.filterData').on(plugin.settings.eventFilter+'.filterData', plugin.doFilter);
     };
 
-    // Do the filter on items
+    // Matching filter function
+    var filterMatch = function(itemData, filterVal) {
+      if(plugin.settings.filterOperator == '==') return itemData == filterVal;
+      if(plugin.settings.filterOperator == '>') return itemData > filterVal;
+      if(plugin.settings.filterOperator == '<') return itemData < filterVal;
+      if(plugin.settings.filterOperator == '>=') return itemData >= filterVal;
+      if(plugin.settings.filterOperator == '<=') return itemData <= filterVal;
+    }
+
+    // Apply filter on items
     plugin.doFilter = function() {
       var filterVal = $element.val(); // Value to filter with
       var $items = $(plugin.settings.selectorItemsToFilter); // Items to filter with data- attr
@@ -49,15 +61,19 @@
       $items.each(function() {
         // If the data attribute of the items matches the value OR there is no value
         // ...the item is displayed
-        if(!filterVal || $(this).data(plugin.settings.filterDataAttribute)==filterVal) {
+        if(!filterVal
+          || filterMatch($(this).data(plugin.settings.filterDataAttribute),filterVal)
+          || (element.type=='radio' && !element.checked)
+          ) {
           $(this).removeClass(plugin.settings.classHidden).removeAttr('aria-hidden');
           count++;
         } else { // If the data does not match, the item is hidden
           $(this).addClass(plugin.settings.classHidden).attr('aria-hidden','true');
         }
       });
-      // Update the counter
+      // Update the counters
       $(plugin.settings.selectorCount).text(count);
+      $(plugin.settings.selectorTotal).text($items.length);
     };
 
     // Initialization

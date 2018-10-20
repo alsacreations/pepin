@@ -1,5 +1,5 @@
 /**!
- Directory
+ Filter directory
  Directory autocomplete for members list or other stuff
  */
 
@@ -193,7 +193,7 @@
   };
 
   $(document).ready(function() {
-    $('.js-directory').filterDirectory();
+    $('.js-filter-directory').filterDirectory();
   });
 
 })(jQuery);
