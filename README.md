@@ -17,6 +17,7 @@ Voir aussi nos [Guidelines](https://github.com/alsacreations/guidelines).
 ## Intérêt des plugins proposés
 
 Les scripts fournis font au maximum attention à :
+
 * leur réutilisabilité (plusieurs fois sur un même document sans conflit)
 * leur capacité à se ré-adapter si leur structure change (ex : ajout d'un item dans des onglets, dans un menu accordéon)
 * avoir un nommage simple et cohérent
@@ -65,6 +66,7 @@ $('.js-plugin-elements').data('pluginName').settings.parameter;
 * Le déclencher par le deuxième lorsque c'est nécessaire avec un appel de `trigger()`.
 
 Premier, sur l'élément de classe `.first` :
+
 ```javascript
 var registerEvents = function() {
   // Autres événements
@@ -75,19 +77,19 @@ var registerEvents = function() {
 ```
 
 Second sur l'élément `.second` :
+
 ```javascript
 // ...
 $('.first').trigger('myCustomEvent');
 // ...
 ```
 
-
 ## Inspirations
 
 * <https://github.com/jquery-boilerplate>
 * <http://stefangabos.ro/jquery/jquery-plugin-boilerplate-revisited/>
 
-# Plugins
+## Plugins
 
 Plusieurs scripts/plugins jQuery qui suivent ce modèle sont proposés comme base de travail et utilisables sur des projets web concrets :
 
