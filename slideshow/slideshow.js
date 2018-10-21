@@ -45,9 +45,6 @@
 
     // Default settings values
     var defaults = {
-      touchEnabled: true,
-      touching: false,
-      touchDelta: 50,
       selectorWrapper: '.slideshow-wrapper',
       selectorItem: '.slideshow-item',
       selectorItemLink: '.slideshow-item-link',
@@ -63,6 +60,9 @@
       // classActive: 'slideshow-item-active',
       classActiveLink: 'is-active',
       classActivePaginationLink: 'slideshow-pagination-list-link-active',
+      touchEnabled: true,
+      touching: false,
+      touchDelta: 50,
       animating: false,
       loop: true,
       activeIndex: 0, // index of default panel displayed
@@ -111,7 +111,7 @@
       $items.attr({
         'role': 'tabpanel',
         'aria-hidden': 'true'
-      });
+      }).find('a').attr('tabindex','-1');
       var $activeItem = $items.eq(plugin.settings.activeIndex);
       $activeItem.attr({
         'aria-hidden': 'false'
@@ -235,10 +235,10 @@
         if ($targetItem.length > 0) {
           $items.removeClass(plugin.settings.classActive).attr({
             'aria-hidden': 'true'
-          });
+          }).find('a').attr('tabindex','-1');
           $targetItem.addClass(plugin.settings.classActive).attr({
             'aria-hidden': 'false'
-          });
+          }).find('a').removeAttr('tabindex');
           // Transition effect with translateX
           // var scrollValue = 100*slideIndex;
           // if(scrollValue>-1) $wrapper.css('transform','translateX(-'+scrollValue+'%)');

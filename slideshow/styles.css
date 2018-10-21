@@ -2,20 +2,6 @@
  * Pepin - slideshow: CSS for demo
  */
 
-/*
- * Utilities
- */
-/* Hides content visually though it's still perceived by screen reader users */
-.visually-hidden {
-  position: absolute !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-}
-
 .slideshow {
   position: relative;
   overflow: hidden;
@@ -42,8 +28,8 @@
 .slideshow-item {
   position: absolute;
   display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
+  flex-direction: column;
+  flex-shrink: 0;
   width: 100%;
   height: auto;
   background-color: #FFF;
@@ -61,7 +47,8 @@
 
 /* image */
 .slideshow-item-img img {
-  display: block; /* removes space below image between border and image */
+  display: block;
+  /* removes space below image between border and image */
   width: 100%;
 }
 
@@ -80,22 +67,24 @@
 /*
  * Slide controls
  */
- .slideshow-item-control {
-   position: absolute;
-     top: 0;
-     left: 0;
-   width: 100%;
-   padding-top: calc(50% / 4 * 3); /* Allows perfect centering if we know the ratio of images: half the width of image / its ratio (320/240 in this demo) */
- }
+.slideshow-item-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: calc(50% / 4 * 3);
+  /* Allows perfect centering if we know the ratio of images: half the width of image / its ratio (320/240 in this demo) */
+}
 
 [class*="slideshow-item-control-"] {
   display: block;
   position: absolute;
-    /* top: 50%; */
+  /* top: 50%; */
   height: 4rem;
   width: 2rem;
   border: 0;
-  margin-top: -2rem; /* minus half-height ⇒ vertical centering */
+  margin-top: -2rem;
+  /* minus half-height ⇒ vertical centering */
   padding: 0;
   line-height: 1;
   background: none;
@@ -138,9 +127,11 @@
 .slideshow-item-control-right {
   right: 0.5rem;
 }
+
 .slideshow-item-control-right::before {
   transform: rotate(-45deg);
 }
+
 .slideshow-item-control-right::after {
   transform: rotate(45deg);
 }
@@ -178,10 +169,13 @@
   display: block;
   border: 3px solid #FFF;
 }
+
 .slideshow-thumbnails-list-link img {
-  display: block; /* removes space below image between border and image */
+  display: block;
+  /* removes space below image between border and image */
   width: 100%;
 }
+
 .slideshow-thumbnails-list-link.is-active {
   border-color: #07B;
 }
@@ -192,16 +186,20 @@
 [class*="slideshow-thumbnails-control-"] {
   display: block;
   position: absolute;
-    top: 50%; /* vertical centering (1/2) */
-  transform: translateY(-50%); /* vertical centering (2/2) */
+  top: 50%;
+  /* vertical centering (1/2) */
+  transform: translateY(-50%);
+  /* vertical centering (2/2) */
   border: 0;
   padding: 0;
   background: none;
   border-radius: 0;
   cursor: pointer;
 }
+
 [class*="slideshow-thumbnails-control-"] svg {
-  display: block; /* removes space below image between border and image */
+  display: block;
+  /* removes space below image between border and image */
   width: 1rem;
   height: 2rem;
   fill: #07B;
@@ -221,11 +219,70 @@
   right: 0.5rem;
 }
 
+ /* pagination */
+ .slideshow-pagination {
+  text-align: center;
+}
+
+.slideshow-pagination-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.slideshow-pagination-list-item {
+  display: inline-block;
+}
+
+/* pagin: link */
+.slideshow-pagination-list-link {
+  display: block;
+  padding: 1rem .5rem;
+  border-radius: 0;
+  background: none;
+}
+
+.slideshow-pagination-list-link::before,
+.slideshow-pagination-list-link::after {
+  content: "";
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background .2s;
+}
+
+/* circle */
+.slideshow-pagination-list-link::before {
+  width: 7px;
+  height: 7px;
+  background: #555;
+  border-radius: 50%;
+}
+
+/* border */
+.slideshow-pagination-list-link::after {
+  width: 10px;
+  height: 2px;
+  margin-top: 0.5rem;
+  background: none;
+}
+
+.slideshow-pagination-list-link:focus,
+.slideshow-pagination-list-link:hover {
+  background: none;
+}
+
+/* active slide */
+.slideshow-pagination-list-link-active::before,
+.slideshow-pagination-list-link-active::after {
+  background-color: #07B;
+}
 
 /*
  * Mobile <= 768px
  */
 @media (max-width: 768px) {
+
   /* slideshow */
   .slideshow {
     padding: 0 0 0.5rem;
@@ -246,6 +303,7 @@
     text-transform: uppercase;
     font-size: 2rem;
   }
+
   .slideshow-maintitle em {
     font-style: normal;
   }
@@ -272,59 +330,15 @@
   }
   */
 
-  /* pagination */
-  .slideshow-pagination {
-    text-align: center;
-  }
+}
 
-  .slideshow-pagination-list {
-    padding-left: 0;
-    list-style: none;
-  }
-
-  .slideshow-pagination-list-item {
-    display: inline-block;
-  }
-
-  /* pagin: link */
-  .slideshow-pagination-list-link {
-    display: block;
-    padding: 1.85rem .5rem;
-    border-radius: 0;
-    background: none;
-  }
-
-  .slideshow-pagination-list-link::before,
-  .slideshow-pagination-list-link::after {
-    content: "";
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background .2s;
-  }
-
-  /* circle */
-  .slideshow-pagination-list-link::before {
-    width: 6px;
-    height: 6px;
-    background: #555;
-    border-radius: 50%;
-  }
-  /* border */
-  .slideshow-pagination-list-link::after {
-    width: 10px;
-    height: 2px;
-    margin-top: 0.5rem;
-    background: none;
-  }
-
-  .slideshow-pagination-list-link:focus, .slideshow-pagination-list-link:hover {
-    background: none;
-  }
-
-  /* active slide */
-  .slideshow-pagination-list-link-active::before,
-  .slideshow-pagination-list-link-active::after {
-    background-color: #07B;
-  }
+/* Hides content visually though it's still perceived by screen reader users */
+.visually-hidden {
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
