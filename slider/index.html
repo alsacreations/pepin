@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Démo Slideshow</title>
+  <title>Démo Slider</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" media="screen" href="styles.css">
 </head>
@@ -11,51 +11,62 @@
 <body>
 
   <div class="js-slider" data-auto-play="true">
-   <div class="slider-wrapper">
-     <div class="slider-item slider-item-active">
-       <a href="#" class="slider-item-link">
-         <div class="slider-item-img"><img src="img/1.jpg" width="800" height="600" alt=""></div>
-       </a>
-     </div>
-     <div class="slider-item">
-       <a href="#" class="slider-item-link">
-         <div class="slider-item-img"><img src="img/2.jpg" width="800" height="600" alt=""></div>
-       </a>
-     </div>
-     <div class="slider-item">
-       <a href="#" class="slider-item-link">
-         <div class="slider-item-img"><img src="img/3.jpg" width="800" height="600" alt=""></div>
-       </a>
-     </div>
-   </div>
-   <div class="slider-control">
-     <button class="slider-control-btn slider-control-btn-play" data-txton="Pause" data-txtoff="Lecture">Lecture</button>
-   </div>
-   <div class="slider-nav">
-     <a href="#" class="prev">
-       <span class="visually-hidden">précédent</span>
-     </a>
-     <a href="#" class="next">
-       <span class="visually-hidden">suivant</span>
-     </a>
-   </div>
-   <div class="slider-pagination">
-     <ul class="slider-pagination-list">
-       <li class="slider-pagination-list-item">
-         <a href="#" class="slider-pagination-list-link slider-pagination-list-link-active">1</a>
-       </li>
-       <li class="slider-pagination-list-item">
-         <a href="#" class="slider-pagination-list-link">2</a>
-       </li>
-       <li class="slider-pagination-list-item">
-         <a href="#" class="slider-pagination-list-link">3</a>
-       </li>
-     </ul>
-   </div>
+
+    <div class="slider-wrapper">
+      <div class="slider-item slider-item-active">
+        <a href="#" class="slider-item-link">
+          <div class="slider-item-img"><img src="img/1.jpg" width="800" height="600" alt=""></div>
+        </a>
+      </div>
+      <div class="slider-item">
+        <a href="#" class="slider-item-link">
+          <div class="slider-item-img"><img src="img/2.jpg" width="800" height="600" alt=""></div>
+        </a>
+      </div>
+      <div class="slider-item">
+        <a href="#" class="slider-item-link">
+          <div class="slider-item-img"><img src="img/3.jpg" width="800" height="600" alt=""></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="slider-control">
+      <button class="slider-control-btn slider-control-btn-play" data-txton="Pause" data-txtoff="Lecture">Lecture</button>
+    </div>
+
+    <div class="slider-item-control">
+      <button class="slider-item-control-prev">
+        <span class="visually-hidden">Élément précédent</span>
+      </button>
+      <button class="slider-item-control-next">
+        <span class="visually-hidden">Élément suivant</span>
+      </button>
+    </div>
+
+    <div class="slider-pagination">
+      <ul class="slider-pagination-list">
+        <li class="slider-pagination-list-item">
+          <a href="#" class="slider-pagination-list-link slider-pagination-list-link-active">1</a>
+        </li>
+        <li class="slider-pagination-list-item">
+          <a href="#" class="slider-pagination-list-link">2</a>
+        </li>
+        <li class="slider-pagination-list-item">
+          <a href="#" class="slider-pagination-list-link">3</a>
+        </li>
+      </ul>
+    </div>
+
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha256-eVNjHw5UeU0jUqPPpZHAkU1z4U+QFBBY488WvueTm88=" crossorigin="anonymous"></script>
+  <footer>
+      <p>Crédits pour les images de chatons : <a href="https://placekitten.com/attribution.html" lang="en" hreflang="en">Placekitten – Attributions</a></p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha256-eVNjHw5UeU0jUqPPpZHAkU1z4U+QFBBY488WvueTm88="
+    crossorigin="anonymous"></script>
   <script src="slider.js"></script>
 
 </body>

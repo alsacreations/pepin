@@ -7,6 +7,13 @@
   width: 800px;
   height: 600px;
   margin: 0 auto 2rem;
+
+}
+
+/* rwd best-effort */
+.js-slider,
+.slider-item {
+  max-width: 100%;
 }
 
 /* wrapper */
@@ -22,22 +29,26 @@
   flex-shrink: 0;
   width: 100%;
   height: 100%;
-  transition-property: transform; /* transition effect */
-  transition-duration: 300ms; /* transition effect */
+  transition-property: transform;
+  /* transition effect */
+  transition-duration: 300ms;
+  /* transition effect */
 }
 
 .slider-item.slider-outside-right {
   position: absolute;
   z-index: 1;
   transform: translate(100%);
-  transition-delay: 0; /* should be higher than .slider-item transition-duration */
+  transition-delay: 0;
+  /* should be higher than .slider-item transition-duration */
 }
 
 .slider-item.slider-outside-left {
   position: absolute;
   z-index: 1;
   transform: translate(-100%);
-  transition-delay: 0; /* should be higher than .slider-item transition-duration */
+  transition-delay: 0;
+  /* should be higher than .slider-item transition-duration */
 }
 
 .slider-item.slider-inside {
@@ -96,41 +107,92 @@
 .slider-pagination-list-link-active {
   background: cyan;
 }
+
 .slider-pagination-list-link:focus,
 .slider-pagination-list-link:hover {
   background: white;
 }
 
-.slider-nav {
-  line-height: 0;
-  height: 0
-}
-
-.slider-nav a {
-  width: 48px;
-  height: 70px;
+/*
+ * Slider controls
+ */
+.slider-item-control {
+  z-index: 42;
   position: absolute;
-  top: 115px;
-  z-index: 3;
-  color: white;
-  text-indent: 0;
-  font-size: 70px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  background: transparent;
-  transition: background-color .2s;
-}
-
-.slider-nav a:hover, .slider-nav a:active, .slider-nav a:focus {
-  background: rgba(#000, .2);
-}
-
-.slider-nav a.next {
-  right: 0;
-  left: auto;
-}
-
-.slider-nav a.prev {
+  top: 0;
   left: 0;
+  width: 100%;
+  padding-top: calc(50% / 4 * 3);
+  /* Allows perfect centering if we know the ratio of images: half the width of image / its ratio (320/240 in this demo) */
+}
+
+[class*="slider-item-control-"] {
+  display: block;
+  position: absolute;
+  /* top: 50%; */
+  height: 4rem;
+  width: 2rem;
+  border: 0;
+  margin-top: -2rem;
+  /* minus half-height ⇒ vertical centering */
+  padding: 0;
+  line-height: 1;
+  background: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+/* arrow */
+[class*="slider-item-control-"]::before,
+[class*="slider-item-control-"]::after {
+  content: "";
+  position: relative;
+  right: -1rem;
+  display: block;
+  height: 2.2rem;
+  width: .2rem;
+  background: #FFF;
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.slider-item-control-prev::after,
+.slider-item-control-next::after {
+  top: -0.65rem;
+}
+
+/* arrow left */
+.slider-item-control-prev {
+  left: 0.5rem;
+}
+
+.slider-item-control-prev::before {
+  transform: rotate(45deg);
+}
+
+.slider-item-control-prev::after {
+  transform: rotate(-45deg);
+}
+
+/* arrow right */
+.slider-item-control-next {
+  right: 0.5rem;
+}
+
+.slider-item-control-next::before {
+  transform: rotate(-45deg);
+}
+
+.slider-item-control-next::after {
+  transform: rotate(45deg);
+}
+
+/* Hides content visually though it's still perceived by screen reader users */
+.visually-hidden {
+  position: absolute !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
