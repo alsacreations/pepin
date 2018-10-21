@@ -1,8 +1,10 @@
 # Pepin
 
-Pepin est un modèle (parmi tant d'autres) de plugin jQuery modulaire, accompagné de plugins pratiques (voir liste ci-dessous), propres et respectant la plupart des bonnes pratiques d'accessibilité, avec l'usage d'ARIA.
+Pepin est un modèle (parmi tant d'autres) de plugin jQuery modulaire.
 
-Ils pourraient dans le futur être adaptés en JavaScript Vanilla (sans dépendance vis-à-vis d'un framework).
+Il est accompagné de plusieurs plugins (voir liste ci-dessous), propres et respectant la plupart des bonnes pratiques d'accessibilité, avec l'usage d'ARIA. Idéal pour l'intégration de composants dans des pages web existantes ou dans un nouveau projet.
+
+Ces plugins pourraient dans le futur être adaptés en JavaScript Vanilla (sans dépendance vis-à-vis d'un framework particulier).
 
 Voir aussi nos [Guidelines](https://github.com/alsacreations/guidelines).
 
@@ -22,7 +24,9 @@ Les scripts fournis font au maximum attention à :
 * leur capacité à se ré-adapter si leur structure change (ex : ajout d'un item dans des onglets, dans un menu accordéon)
 * avoir un nommage simple et cohérent
 
-## Usage du modèle
+Les styles sont volontairement "bruts", sans surcouche esthétique, pour vous permettre de les personnaliser plus rapidement à votre charte graphique.
+
+## Usage du modèle pour créer un nouveau plugin
 
 * Modifier le nom du plugin `pluginName` par quelque chose de parlant  (ex : `tabs`).
 * Modifier la classe HTML des éléments sur lequel il peut s'appliquer `.js-plugin-elements` (ex : `.js-tabs`).
@@ -39,6 +43,8 @@ $(document).ready(function() {
 
 });
 ```
+
+Ceci est placé par défaut à la fin du code de chaque plugin mais peut en être extrait pour lancer l'initialisation ailleurs.
 
 ### Variantes
 
@@ -97,17 +103,17 @@ Plusieurs scripts/plugins jQuery qui suivent ce modèle sont proposés comme bas
 | ------------- | ------------- | ------------- | ------------- |
 | Accordion | Blocs déployables en accordéon  | OK | OK |
 | Filter | Filtrage de données sur la page / Auto-complétion et recherche d'éléments sur la page | OK | OK |
-| Offcanvas | Principe de déploiement off-canvas (ex : menu) | En cours | TODO |
 | Selection | Eléments parents sélectionnables (ex : checkbox/radio) | OK | OK |
-| Slider | Défilement de contenu de type carousel | OK | TODO |
-| Slideshow | Défilement de contenu de type diaporama | OK | En cours |
 | SmoothScroll | Défilement de page (vertical en général) suite au clic sur un lien/bouton | OK | OK |
-| Sticky | Elément fixé en sticky au scroll | OK | TODO |
 | Tabs | Onglets | OK | OK |
 | Copy | Recopie de texte d'un élément à l'autre | OK | OK |
 | Toggle | Déclencheurs d'ajout/suppression de classe, de gestion d'éléments à distance (ex : afficher/masquer un élément, listes déroulantes, agir sur les cellules d'un tableau, etc) | OK | OK |
 | Typosize | Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices | OK | OK |
-| Modal | Fenêtres modales (popin) | En cours | TODO |
+| Slider | Défilement de contenu de type carousel | OK | OK |
+| Slideshow | Défilement de contenu de type diaporama | OK | OK |
+| Modal | Fenêtres modales (popin) | WIP | TODO |
+| Offcanvas | Principe de déploiement off-canvas (ex : menu) | WIP | TODO |
+| Sticky | Navigation fixée en sticky au scroll | WIP | TODO |
 | - | Liens d'évitement | Prévu | - |
 | - | Menu déroulant | Prévu | - |
 | - | Tooltip | Prévu | - |
