@@ -9,8 +9,8 @@
 
     // Default settings values
     var defaults = {
-      selectorLinks: '.tabs-menu-link',
       selectorList: '.tabs-menu',
+      selectorLinks: '.tabs-menu-link',
       selectorListItems: 'li',
       selectorContent: '.tabs-content-item',
       classActive: 'is-active'
