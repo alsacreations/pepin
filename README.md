@@ -97,7 +97,9 @@ $('.first').trigger('myCustomEvent');
 
 ## Plugins
 
-Plusieurs scripts/plugins jQuery qui suivent ce modèle sont proposés comme base de travail et utilisables sur des projets web concrets :
+Plusieurs scripts/plugins jQuery qui suivent ce modèle sont proposés comme base de travail et utilisables sur des projets web concrets.
+
+### Stables
 
 | Nom  | Description | Statut | Doc |
 | ------------- | ------------- | ------------- | ------------- |
@@ -111,7 +113,12 @@ Plusieurs scripts/plugins jQuery qui suivent ce modèle sont proposés comme bas
 | Typosize | Affectation de styles au body, par exemple pour agrandir/réduire la taille des polices | OK | OK |
 | Slider | Défilement de contenu de type carousel | OK | OK |
 | Slideshow | Défilement de contenu de type diaporama | OK | OK |
-| Modal | Fenêtres modales (popin) | WIP | TODO |
+| Modal | Fenêtres modales (popin) | OK | OK |
+
+### Work in progress
+
+| Nom  | Description | Statut | Doc |
+| ------------- | ------------- | ------------- | ------------- |
 | Offcanvas | Principe de déploiement off-canvas (ex : menu) | WIP | TODO |
 | Sticky | Navigation fixée en sticky au scroll | WIP | TODO |
 | - | Liens d'évitement | Prévu | - |
