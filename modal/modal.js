@@ -66,7 +66,7 @@
       $(plugin.settings.selectorPage).attr('aria-hidden','true');
       $('.modal, .modal-overlay').remove(); // Closes remaining other modals
       plugin.openOverlay();
-      var $modal = $('<dialog class="'+plugin.settings.classModal+'" open aria-modal="true"><div role="document" class="container"><button class="closemodal">Fermer</button></div></dialog>');
+      var $modal = $('<dialog class="'+plugin.settings.classModal+'" open aria-modal="true"><div role="document" class="container"><button type="button" class="closemodal">Fermer</button></div></dialog>');
       if(plugin.settings.modalUrl) {
         // Load contents with AJAX
         $.get(plugin.settings.modalUrl, null, function(html) {

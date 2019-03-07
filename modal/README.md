@@ -25,7 +25,7 @@ Permet d'ouvrir une "fenêtre" modale dans une page web, par exemple au clic sur
 3. Ajouter les styles CSS prévus par défaut pour la modale (voir fichier index.html)
 
 ```html
-<button class="js-modal" data-modal-url="modal.html">Ouvrir</button>
+<button type="button" class="js-modal" data-modal-url="modal.html">Ouvrir</button>
 ```
 
 Voir la démonstration dans index.html

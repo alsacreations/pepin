@@ -21,7 +21,7 @@ Il peut y en avoir plusieurs par page.
 2. Définir les styles de `.typosize-big` dans la feuille de styles CSS
 
 ```html
-<button class="js-typosize" title="Agrandir/réduire la taille de police">aA</button>
+<button type="button" class="js-typosize" title="Agrandir/réduire la taille de police">aA</button>
 ```
 
 ## Usage avec paramètres
@@ -29,7 +29,7 @@ Il peut y en avoir plusieurs par page.
 Par attributs data-* on peut moduler les paramètres par défaut.
 
 ```html
-<button class="js-typosize" title="Agrandir/réduire la taille de police" data-class-enabled="bigbigbig" data-target=".container">aA</button>
+<button type="button" class="js-typosize" title="Agrandir/réduire la taille de police" data-class-enabled="bigbigbig" data-target=".container">aA</button>
 ```
 
 Voir la démonstration dans index.html

@@ -18,7 +18,7 @@ Lorsque l'élément contient une case à cocher (checkbox), il se voit ajouté u
 
 ```html
 <p class="js-selection">
-  <input type="checkbox" id="check1"> <label for="check1">Check me !</label>
+  <input type="checkbox" id="check1"> <label for="check1">Cochez-moi !</label>
 </p>
 ```
 
