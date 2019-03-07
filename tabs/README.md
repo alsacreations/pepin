@@ -121,12 +121,10 @@ Voir la démonstration dans index-list.html
 
 .tabs-menu-link.is-active {
   border-bottom-color: #ddd;
-  outline: 0;
 }
 .tabs-menu-link:focus {
   border-bottom-color: olivedrab;
   color: olivedrab;
-  outline: 0;
 }
 
 @media (min-width: 576px) {
