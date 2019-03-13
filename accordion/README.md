@@ -4,18 +4,18 @@
 
 ### Fonctionnement
 
-Lorsque la classe `.js-accordion` est utilisée sur un élément HTML, ses petits-enfants de classe `.js-accordion-header` deviennent les en-têtes et ceux de classe `.js-accordion-panel` les panneaux de contenu.
+Lorsque la classe `.js-accordion` est utilisée sur un élément HTML, ses descendants de classe `.js-accordion-header` deviennent les en-têtes et ceux de classe `.js-accordion-panel` les panneaux de contenu.
 
 La classe `.visually-hidden` est appliquée, il faut que celle-ci soit déjà intégrée à votre feuille de styles, ou ajoutée.
 
 Il peut y en avoir plusieurs par page.
 
+Pour supprimer/remplacer les icônes, retirez les éléments `<svg>`.
+
 ### Paramètres
 
 * `selectorHeader` : sélecteur d'en-tête (défaut : '.js-accordion-header')
 * `selectorPanel` : sélecteur de panneau (défaut : '.js-accordion-panel')
-* `selectorIcon` : sélecteur d'icône s'il y a lieu (défaut : '.icon-arrow')
-* `classIconActive` : classe d'icône active (défaut : 'to-bottom')
 * `classHidden` : classe de panneau caché (défaut : 'visually-hidden')
 * `autoScroll` : faire défiler automatiquement au contenu actif (défaut : true)
 * `scrollSpeed` : vitesse de défilement (défaut : 300)

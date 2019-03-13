@@ -1,10 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-		<meta charset="UTF-8">
-		<title>Démo Accordion</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+  <meta charset="UTF-8">
+  <title>Démo Accordéon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
     .visually-hidden {
       position: absolute !important;
       border: 0 !important;
@@ -15,48 +16,64 @@
       clip: rect(0, 0, 0, 0) !important;
     }
 
-		.js-accordion-header {
-			display: flex;
-			align-items: center;
-		}
+    .js-accordion-header {
+      display: flex;
+      align-items: center;
+    }
 
-		.js-accordion-header [class^="icon-"] {
-			display: inline-block;
-			width: 0.7em;
-			height: 0.7em;
-			margin-left: 1em;
-			transition: 0.25s transform linear;
-		}
+    .js-accordion-header [class^="icon-"] {
+      display: inline-block;
+      width: 0.7em;
+      height: 0.7em;
+      margin-left: 1em;
+      transition: 0.25s transform linear;
+    }
 
-		.js-accordion-header[aria-expanded="true"] [class^="icon-"] {
-			transform: rotate(-180deg);
-		}
-    </style>
+    .js-accordion-header[aria-expanded="true"] [class^="icon-"] {
+      transform: rotate(-180deg);
+    }
+
+  </style>
 </head>
+
 <body>
 
-	<h1>Demo of accordion component</h1>
+  <h1>Démo accordéon</h1>
 
   <div class="js-accordion">
-    <h2 class="js-accordion-header">Header 1 <svg class="icon-arrow-down" aria-hidden="true" viewBox="0 0 10 10" width="10" height="10"> <path d="m5 9-3-4h2v-4h2v4h2z"/> </svg></h2>
+    <h2 class="js-accordion-header">Intitulé 1 <svg class="icon-arrow-down" aria-hidden="true" viewBox="0 0 10 10" width="10"
+        height="10">
+        <path d="m5 9-3-4h2v-4h2v4h2z" /> </svg></h2>
     <div class="js-accordion-panel">
-			<p>Panel 1</p>
-    	<p>Lorem Elsass ipsum gal ornare dolor habitant consectetur vielmols, kartoffelsalad messti de Bischheim Coopé de Truchtersheim salu rucksack tristique sit elit hoplageiss eget non picon bière schneck jetz gehts los ac baeckeoffe id mollis Verdammi lacus placerat blottkopf, chambon tellus adipiscing pellentesque amet.</p>
+      <p>Panneau 1</p>
+      <p>Lorem Elsass ipsum gal ornare dolor habitant consectetur vielmols, kartoffelsalad messti de Bischheim
+        Coopé de Truchtersheim salu rucksack tristique sit elit hoplageiss eget non picon bière schneck jetz gehts los
+        ac baeckeoffe id mollis Verdammi lacus placerat blottkopf, chambon tellus adipiscing pellentesque amet.</p>
     </div>
-    <h2 class="js-accordion-header">Header 2 <svg class="icon-arrow-down" aria-hidden="true" viewBox="0 0 10 10" width="10" height="10"> <path d="m5 9-3-4h2v-4h2v4h2z"/> </svg></h2>
+    <h2 class="js-accordion-header">Intitulé 2 <svg class="icon-arrow-down" aria-hidden="true" viewBox="0 0 10 10" width="10"
+        height="10">
+        <path d="m5 9-3-4h2v-4h2v4h2z" /> </svg></h2>
     <div class="js-accordion-panel">
-			<p>Panel 2</p>
-    	<p>Elementum bissame barapli Wurschtsalad ullamcorper bredele nüdle sed et Morbi Kabinetpapier sit schpeck DNA, hopla hopla hopla Carola varius lotto-owe Chulien mänele wie ornare sed ftomi! turpis Yo dû. aliquam sagittis munster libero, id, flammekueche rossbolla ch'ai gewurztraminer yeuh.</p>
+      <p>Panneau 2</p>
+      <p>Elementum bissame barapli Wurschtsalad ullamcorper bredele nüdle sed et Morbi Kabinetpapier sit schpeck DNA,
+        hopla hopla hopla Carola varius lotto-owe Chulien mänele wie ornare sed ftomi! turpis Yo dû. aliquam sagittis
+        munster libero, id, flammekueche rossbolla ch'ai gewurztraminer yeuh.</p>
     </div>
-    <h2 class="js-accordion-header">Header 3 <svg class="icon-arrow-down" aria-hidden="true" viewBox="0 0 10 10" width="10" height="10"> <path d="m5 9-3-4h2v-4h2v4h2z"/> </svg></h2>
+    <h2 class="js-accordion-header">Intitulé 3 <svg class="icon-arrow-down" aria-hidden="true" viewBox="0 0 10 10" width="10"
+        height="10">
+        <path d="m5 9-3-4h2v-4h2v4h2z" /> </svg></h2>
     <div class="js-accordion-panel">
-			<p>Panel 3</p>
-    	<p>Mauris geht's Salut bisamme Gal. tellus Racing. geïz so Huguette leo Pellentesque Christkindelsmärik schnaps amet suspendisse non merci vielmols risus, Spätzle leo kuglopf libero, Strasbourg in, wurscht hop nullam ac purus Heineken mamsell amet Hans leverwurscht réchime quam, eleifend Richard Schirmeck condimentum Salu bissame auctor, vulputate knepfle s'guelt Oberschaeffolsheim rhoncus Miss Dahlias porta Pfourtz !</p>
+      <p>Panneau 3</p>
+      <p>Mauris geht's Salut bisamme Gal. tellus Racing. geïz so Huguette leo Pellentesque Christkindelsmärik schnaps
+        amet suspendisse non merci vielmols risus, Spätzle leo kuglopf libero, Strasbourg in, wurscht hop nullam ac
+        purus Heineken mamsell amet Hans leverwurscht réchime quam, eleifend Richard Schirmeck condimentum Salu bissame
+        auctor, vulputate knepfle s'guelt Oberschaeffolsheim rhoncus Miss Dahlias porta Pfourtz !</p>
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="accordion.js"></script>
 
 </body>
+
 </html>

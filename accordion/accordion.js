@@ -11,8 +11,6 @@
     var defaults = {
       selectorHeader: '.js-accordion-header',
       selectorPanel: '.js-accordion-panel',
-      selectorIcon: '.icon-arrow',
-      classIconActive: 'to-bottom',
       classHidden: 'visually-hidden',
       autoScroll: true,
       scrollSpeed: 300,
@@ -107,15 +105,13 @@
       $panel = $header.next(plugin.settings.selectorPanel);
       if(state) {
         $header
-          .attr({'aria-expanded':'true','aria-selected':'true'})
-          .find(plugin.settings.selectorIcon).addClass(plugin.settings.classIconActive);
+          .attr({'aria-expanded':'true','aria-selected':'true'});
         $panel
           .attr({'aria-hidden':'false'}).removeClass(plugin.settings.classHidden);
       } else { // Hidden
         $header
           .removeAttr('aria-expanded')
-          .removeAttr('aria-selected')
-          .find(plugin.settings.selectorIcon).removeClass(plugin.settings.classIconActive);
+          .removeAttr('aria-selected');
         $panel
           .attr({'aria-hidden':'true'}).addClass(plugin.settings.classHidden);
       }
