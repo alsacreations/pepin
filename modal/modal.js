@@ -71,6 +71,16 @@
         // Load contents with AJAX
         $.get(plugin.settings.modalUrl, null, function(html) {
           $modal.find('.container:first').append(html);
+          // Set a label with the first header
+          var $header = $modal.find(':header:first');
+          if($header.length) {
+            var id = $header.attr('id');
+            if (id === undefined) { // Generate random id if needed
+              id = 'modal-t' + Math.floor(Math.random() * 1000000000);
+              $header.attr('id', id);
+            }
+            $modal.attr('aria-labelledby', id);
+          }
           $modal.appendTo($('body'));
           // Set the focus to the first keyboard focusable item
           $('.modal').find(plugin.settings.focusableElements).filter(':visible').first().focus();
