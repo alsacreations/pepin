@@ -8,9 +8,13 @@ Lorsque l'élément ciblé par le plugin est cliqué, ajoute/supprime la classe 
 
 Il peut y en avoir plusieurs par page.
 
+Pensez à donner un intitulé explicite aux boutons d'action, par exemple en utilisant `arial-label`.
+
+Des attributs `data-alt-label` et `data-alt-content` définissent le texte et le label aria alternatifs lorsque l'élément a été actionné (afin que l'intitulé devienne _diminuer_ plutôt qu'_agrandir_).
+
 ### Paramètres
 
-* `classEnabled` : classe à ajouter/supprimer à l'élément ciblé par _target_ lorsque l'élément du plugin est cliqué (défaut : `typosize-big`)
+* `classActive` : classe à ajouter/supprimer à l'élément ciblé par _target_ lorsque l'élément du plugin est cliqué (défaut : `typosize-big`)
 * `target` : sélecteur de l'élément à modifier (défaut : `body`)
 
 ### Exemples

@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Démo Typosize</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
     .typosize-big {
       font-size: 2em;
     }
@@ -17,17 +17,20 @@
 
 <body>
 
-  <p>Bouton avec paramètres par défaut qui cible &lt;body&gt; :
-    <button type="button" class="js-typosize" aria-label="Agrandir la taille des caractères">aA</button>
+  <p>Bouton avec paramètres par défaut qui cible <code>&lt;body&gt;</code> :
+    <button type="button" class="js-typosize" aria-label="Agrandir la taille des caractères" data-alt-label="Diminuer la taille des caractères" data-alt-content="Aa-">aA+</button>
   </p>
 
-  <p>Button avec classe CSS personnalisée qui cible #container :
-    <button type="button" class="js-typosize" data-class-enabled="typosize-ultrabig" data-target="#container" aria-label="Agrandir la taille des caractères">aA+</button>
+  <p>Button avec classe CSS personnalisée qui cible <code>#container</code> :
+    <button type="button" class="js-typosize" data-class-active="typosize-ultrabig" data-target="#container"
+      aria-label="Agrandir la taille des caractères" data-alt-label="Diminuer la taille des caractères" data-alt-content="Aa-">aA+</button>
   </p>
 
   <div id="container">
     <h1>Titre</h1>
-    <p>Paragraphe</p>
+    <p>Paragraphe 1</p>
+    <p>Paragraphe 2</p>
+    <p>Paragraphe 3</p>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
