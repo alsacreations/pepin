@@ -1,63 +1,66 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-		<meta charset="UTF-8">
-		<title>Démo Modal</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Démo Modal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-/* Compatibilité anciens navigateurs */
-dialog {
-  display: block;
-}
+  <style>
+  /* Compatibilité anciens navigateurs */
+  dialog {
+    display: block;
+  }
 
-/* Pas de scroll sur <body> quand la modale est ouverte */
-.no-scroll {
-  overflow: hidden;
-}
+  /* Pas de scroll sur <body> quand la modale est ouverte */
+  .no-scroll {
+    overflow: hidden;
+  }
 
-/* Overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1337;
-  background-color: rgba(0,0,0,0.1);
-}
+  /* Overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1337;
+    background-color: rgba(0,0,0,0.1);
+  }
 
-/* Bloc modal */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  max-width: 90vw;
-  max-height: 90vh;
-  margin: 0;
-  background: #fff;
-  z-index: 1338;
-  border: 0;
-  box-shadow: 2px 2px 15px #ccc;
-}
+  /* Bloc modal */
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: 0;
+    background: #fff;
+    z-index: 1338;
+    border: 0;
+    box-shadow: 2px 2px 15px #ccc;
+  }
 
-.modal * {
-  max-width: 100%;
-}
+  .modal * {
+    max-width: 100%;
+  }
 
-.closemodal {
-  float: right;
-}
-</style>
+  .closemodal {
+    float: right;
+  }
+  </style>
 
 </head>
+
 <body>
 
   <button type="button" class="js-modal" data-modal-url="modal.html">Ouvrir</button>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.comhttps://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="modal.js"></script>
 
 </body>
+
 </html>
