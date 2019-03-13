@@ -53,6 +53,19 @@
       if(plugin.settings.target && !plugin.settings.active) {
         plugin.settings.target.addClass(plugin.settings.classToggle);
       }
+      // Set aria-controls
+      if(plugin.settings.target.length==1) {
+        var id = plugin.settings.target.attr('id');
+        if (id === undefined) { // Generate random id if needed
+          id = 'toggle-' + Math.floor(Math.random() * 1000000000);
+          plugin.settings.target.attr('id', id);
+        }
+        $element.attr('aria-controls', id);
+      }
+      // Set aria-expanded (if needed)
+      if(plugin.settings.useAriaExpanded) {
+        $element.attr('aria-expanded',plugin.settings.active);
+      }
       registerEvents();
     };
 
@@ -84,12 +97,23 @@
       // Toggle the defined class on the target
       if(plugin.settings.target) {
         plugin.settings.target.toggleClass(plugin.settings.classToggle,!plugin.settings.active);
+        if(plugin.settings.useAriaExpanded) $element.attr('aria-expanded',plugin.settings.active);
       }
       if(plugin.settings.targetInvert) {
         plugin.settings.targetInvert.toggleClass(plugin.settings.classToggle,plugin.settings.active);
+        if(plugin.settings.useAriaExpanded) {
+          plugin.settings.targetInvert.each(function() {
+            var id = $(this).attr('id');
+            if(id) $('[aria-controls='+id+']').attr('aria-expanded',!plugin.settings.active);
+          });
+        }
       }
-      if(plugin.settings.toggleInvert && plugin.settings.active) {
-        plugin.settings.toggleInvert.not($element).trigger('toggle-trigger-off');
+      if(plugin.settings.toggleInvert && plugin.settings.active) { // ~ group
+        var t = plugin.settings.toggleInvert.not($element);
+        t.trigger('toggle-trigger-off');
+        if(plugin.settings.useAriaExpanded) {
+          t.attr('aria-expanded','false');
+        }
       }
 
       // If needed : toggle internal icon state

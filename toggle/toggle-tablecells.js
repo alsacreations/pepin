@@ -62,10 +62,12 @@
     plugin.togglePlus = function(e) {
       var $target = $(this).closest('tr').nextUntil('.table-eval-parent').not('.table-info');
       if ($target.hasClass('is-closed')) {
-        $(this).children('i').removeClass('icon-plus-circle').addClass('icon-minus-circle');
+        // If needed : icons
+        // $(this).children('.icon').removeClass('icon-plus-circle').addClass('icon-minus-circle');
         $target.removeClass('is-closed').addClass('is-opened');
       } else {
-        $(this).children('i').removeClass('icon-minus-circle').addClass('icon-plus-circle');
+        // If needed : icons
+        // $(this).children('.icon').removeClass('icon-minus-circle').addClass('icon-plus-circle');
         $target.addClass('is-closed').removeClass('is-opened');
       }
     };

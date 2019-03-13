@@ -1,50 +1,49 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-		<meta charset="UTF-8">
-		<title>Démo listes déployables avec Toggle-Trigger</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-    .js-hidden {
-      display: none;
-    }
-    button {
-      font-size: 2rem;
-      display: block;
-    }
-    .beautiful {
-    	padding: 0.25rem;
-      color: white;
-			background: tomato;
-    }
+  <meta charset="UTF-8">
+  <title>Démo listes déployables avec Toggle-Trigger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  .js-hidden {
+    display: none;
+  }
+  button {
+    display: block;
+  }
+  .beautiful {
+    padding: 0.25rem;
+    color: white;
+    background: tomato;
+  }
 
-		/* Layout */
-		body {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-			grid-gap: 1em;
-			font-family: sans-serif;
-		}
-
-		body > div {
-			border: 1px solid tomato;
-			padding: 1em;
-		}
-
-		h1 {
-			font-size: 1.2em;
-		}
-    </style>
+  /* Layout */
+  body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 1em;
+    font-family: sans-serif;
+  }
+  body > div {
+    border: 1px solid tomato;
+    padding: 1em;
+  }
+  h1 {
+    font-size: 1.2em;
+  }
+  </style>
 </head>
+
 <body>
 
   <div>
     <h1>Afficher ou masquer un élément (utilise .js-hidden par défaut)</h1>
-    <button type="button" class="js-toggle-trigger" data-selector-target=".hop1">Afficher/masquer</button>
+    <button type="button" class="js-toggle-trigger" data-selector-target=".hop1" data-use-aria-expanded="true">Afficher/masquer les ingrédients</button>
     <ul class="hop1">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <li>Salade</li>
+      <li>Tomate</li>
+      <li>Oignon</li>
     </ul>
   </div>
 
@@ -56,21 +55,28 @@
 
   <div>
     <h1>Changer la classe d'un autre élément (+ cible inversée)</h1>
-    <button type="button" class="js-toggle-trigger" data-selector-target=".hop3" data-selector-target-invert=".hop4" data-class-toggle="beautiful">Toggle !</button>
+    <button type="button" class="js-toggle-trigger" data-selector-target=".hop3" data-selector-target-invert=".hop4"
+      data-class-toggle="beautiful">Toggle !</button>
     <p class="hop3">Cible</p>
     <p class="hop4">Cible inversée</p>
   </div>
 
   <div>
     <h1>Changer la classe d'un autre élément en se basant sur checked</h1>
-    <input type="checkbox" class="js-toggle-trigger" data-selector-target-invert=".hop5" data-class-toggle="beautiful" data-use-checked="true" id="c1"> <label for="c1">Cochez-moi</label>
-    <p class="hop5">Cible</p>
+    <input type="checkbox" class="js-toggle-trigger"
+      data-selector-target-invert=".hop5"
+      data-class-toggle="beautiful"
+      data-use-checked="true" id="c1"> <label for="c1">Cochez-moi pour activer la classe</label>
+    <p class="hop5">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
   </div>
 
   <div>
     <h1>Dans un même conteneur</h1>
     <div class="js-toggle-container">
-      <button type="button" class="js-toggle-trigger" data-selector-container=".js-toggle-container" data-selector-target=".hop6" data-class-toggle="beautiful">Toggle !</button>
+      <button type="button" class="js-toggle-trigger"
+        data-selector-container=".js-toggle-container"
+        data-selector-target=".hop6"
+        data-class-toggle="beautiful">Toggle !</button>
       <p class="hop6">Cible concernée car dans le même conteneur</p>
     </div>
     <p class="hop6">Cible non modifiée</p>
@@ -78,41 +84,44 @@
 
   <div>
     <h1>Liste déroulante simple (éléments indépendants)</h1>
-    <button type="button" class="js-toggle-trigger" data-selector-target=".list1">Liste 1</button>
+    <button type="button" class="js-toggle-trigger" data-selector-target=".list1" data-use-aria-expanded="true">Liste des fruits</button>
     <ul class="list1">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <li>Kiwi</li>
+      <li>Mangue</li>
+      <li>Goyave</li>
     </ul>
-    <button type="button" class="js-toggle-trigger" data-selector-target=".list2">Liste 2</button>
+    <button type="button" class="js-toggle-trigger" data-selector-target=".list2" data-use-aria-expanded="true">Liste des légumes</button>
     <ul class="list2">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <li>Poireau</li>
+      <li>Haricot</li>
+      <li>Carotte</li>
     </ul>
-    <button type="button" class="js-toggle-trigger" data-selector-target=".list3">Liste 3</button>
+    <button type="button" class="js-toggle-trigger" data-selector-target=".list3" data-use-aria-expanded="true">Liste des villes</button>
     <ul class="list3">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <li>Montréal</li>
+      <li>Toronto</li>
+      <li>Québec</li>
     </ul>
   </div>
 
   <div>
     <h1>Liste déroulante avec un seul élément ouvert à la fois (éléments liés)</h1>
-    <button type="button" class="js-toggle-trigger group" data-selector-target=".list4" data-selector-toggle-invert=".group">Liste 4</button>
+    <button type="button" class="js-toggle-trigger group" data-selector-target=".list4" data-selector-toggle-invert=".group" data-use-aria-expanded="true">Liste
+      4</button>
     <ul class="list4">
       <li>Item 1</li>
       <li>Item 2</li>
       <li>Item 3</li>
     </ul>
-    <button type="button" class="js-toggle-trigger group" data-selector-target=".list5" data-selector-toggle-invert=".group">Liste 5</button>
+    <button type="button" class="js-toggle-trigger group" data-selector-target=".list5" data-selector-toggle-invert=".group" data-use-aria-expanded="true">Liste
+      5</button>
     <ul class="list5">
       <li>Item 1</li>
       <li>Item 2</li>
       <li>Item 3</li>
     </ul>
-    <button type="button" class="js-toggle-trigger group" data-selector-target=".list6" data-selector-toggle-invert=".group">Liste 6</button>
+    <button type="button" class="js-toggle-trigger group" data-selector-target=".list6" data-selector-toggle-invert=".group" data-use-aria-expanded="true">Liste
+      6</button>
     <ul class="list6">
       <li>Item 1</li>
       <li>Item 2</li>
