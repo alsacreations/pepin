@@ -8,8 +8,8 @@
   $.typosize = function(el, options) {
 
     var defaults = {
-      classEnabled:'typosize-big',
-      target:'body'
+      classActive: 'typosize-big',
+      target: 'body'
     };
 
     var plugin = this;
@@ -42,7 +42,21 @@
 
     // Plugin do something
     plugin.toggleTypoSize = function() {
-      $(plugin.settings.target).toggleClass(plugin.settings.classEnabled);
+      var $target = $(plugin.settings.target);
+      if($target.hasClass(plugin.settings.classActive)) {
+        $target.removeClass(plugin.settings.classActive);
+        // Reset initial state
+        $element.attr('aria-label',$element.data('initial-label'));
+        $element.text($element.data('initial-content'));
+      } else {
+        // Save initial state
+        $element.data('initial-label',$element.attr('aria-label'));
+        $element.data('initial-content',$element.text());
+        // Apply new state
+        $target.addClass(plugin.settings.classActive);
+        $element.attr('aria-label',$element.data('alt-label'));
+        $element.text($element.data('alt-content'));
+      }
     };
 
     plugin.init();
