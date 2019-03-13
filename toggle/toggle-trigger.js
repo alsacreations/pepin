@@ -9,18 +9,19 @@
 
     // Default settings values
     var defaults = {
-      active:false,
-      events:'click',
-      target:undefined,
-      targetInvert:undefined,
-      classToggle:'js-hidden',
-      classActive:'is-active',
-      selectorContainer:undefined, // could be '.js-toggle-container'
-      selectorTarget:'.js-toggle-target',
-      selectorTargetInvert:undefined,
-      selectorToggleInvert:undefined,
-      autoOffEvent:false, // toggle off when "outside" event (eg 'click')
-      useChecked:false // if true, $element needs to be checked (input radio/checkbox) to activate the target
+      active: false,
+      events: 'click',
+      target: undefined,
+      targetInvert: undefined,
+      classToggle: 'js-hidden',
+      classActive: 'is-active',
+      selectorContainer: undefined, // could be '.js-toggle-container'
+      selectorTarget: '.js-toggle-target',
+      selectorTargetInvert: undefined,
+      selectorToggleInvert: undefined,
+      autoOffEvent: false, // toggle off when "outside" event (eg 'click')
+      useChecked: false, // if true, $element needs to be checked (input radio/checkbox) to activate the target
+      useAriaExpanded: false // if true, set aria-expanded attribute on target element
     };
 
     var plugin = this;

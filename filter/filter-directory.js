@@ -6,27 +6,27 @@
 (function($) {
 
   // Update :contains() pseudo-selector for case-insensitive behaviour
-  $.expr[":"].contains = $.expr.createPseudo(function(arg) {
-     return function( elem ) {
-         return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-     };
+  $.expr[":"].contains = $.expr.createPseudo(function (arg) {
+    return function (elem) {
+      return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+    };
   });
 
   $.filterDirectory = function(el, options) {
 
     // Default settings values
     var defaults = {
-      nbMaxItemsAtStart:3,
-      selectorForm:'.annuaire-form',
-      selectorItems:'.annuaire-item',
-      selectorAutoComplete:'.searchform-autocomplete',
-      selectorInput:'.searchform-input',
-      selectorAlphaFilters:'.annuaire-sort-alpha-list a',
-      selectorAlphaContents:'.annuaire-list, .annuaire-subtitle',
-      selectorSubtitles:'.annuaire-subtitle',
-      selectorToHideWithFilters:'.annuaire-nb-members',
-      selectorSuggest:'.annuaire-name a',
-      selectorSubmit:'.searchform-submit'
+      nbMaxItemsAtStart: 3,
+      selectorForm: '.annuaire-form',
+      selectorItems: '.annuaire-item',
+      selectorAutoComplete: '.searchform-autocomplete',
+      selectorInput: '.searchform-input',
+      selectorAlphaFilters: '.annuaire-sort-alpha-list a',
+      selectorAlphaContents: '.annuaire-list, .annuaire-subtitle',
+      selectorSubtitles: '.annuaire-subtitle',
+      selectorToHideWithFilters: '.annuaire-nb-members',
+      selectorSuggest: '.annuaire-name a',
+      selectorSubmit: '.searchform-submit'
     };
 
     var plugin = this;

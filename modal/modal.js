@@ -8,13 +8,13 @@
 
     // Default settings values
     var defaults = {
-      modalUrl:undefined,
-      useHistory:true,
-      open:false,
+      modalUrl: undefined,
+      useHistory: true,
+      open: false,
       focusableElements: "a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]",
-      classOverlay:'modal-overlay',
-      classModal:'modal',
-      selectorPage:'#container'
+      classOverlay: 'modal-overlay',
+      classModal: 'modal',
+      selectorPage: '#container'
     };
 
     var plugin = this;
