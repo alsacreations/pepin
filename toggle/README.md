@@ -8,6 +8,7 @@ Changements de classe sur un élément B déclenchés par un élément A.
 
 ### Paramètres
 
+* `events`: événements à surveiller, liste séparée par des espaces (défaut : `click`)
 * `classActive`: classe ajoutée à l'élement actif (défaut : `is-active`)
 * `classToggle`: classe ajoutée/enlevée à l'élement cible (défaut : `js-hidden`)
 * `useChecked`: utiliser l'état "coché" pour déterminer si l'élément est actif - fonctionne avec les inputs checkbox/radio (défaut : `false`)
