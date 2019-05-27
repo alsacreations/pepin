@@ -60,7 +60,7 @@
 
     // Plugin do scroll
     plugin.scrollTo = function ($target) {
-      if ($target.length < 1) return;
+      if (!$target || $target.length < 1) return;
       $target.attr('tabindex', '-1'); // a11y
       $('body,html').animate({
         scrollTop: $target.offset().top
